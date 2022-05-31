@@ -26,6 +26,7 @@ https://docs.google.com/spreadsheets/d/1cjFq1IeK52mAFR7_4GGIdYQJ2ugs4N0gqTImueBf
 # ER図
 ---
 https://cacoo.com/diagrams/oa4gv2TlyOdH7Hxt/B551C
+![スクリーンショット 2022-05-30 22 57 27](https://user-images.githubusercontent.com/100666326/171131964-592d271a-6d5c-45d4-b887-b52cd3138d66.png)
 # テーブル定義書
 ---
 https://docs.google.com/spreadsheets/d/1cjFq1IeK52mAFR7_4GGIdYQJ2ugs4N0gqTImueBfpI0/edit?usp=sharing
@@ -35,4 +36,4 @@ https://cacoo.com/diagrams/oa4gv2TlyOdH7Hxt/6310E
 # 画面遷移図
 ---
 https://cacoo.com/diagrams/oa4gv2TlyOdH7Hxt/808F5
-![スクリーンショット 2022-05-31 17 31 14](https://user-images.githubusercontent.com/100666326/171130558-beb6e5d9-8a9f-42a9-a34c-7ff5f43d27bc.png)
+![スクリーンショット 2022-05-31 17 41 26](https://user-images.githubusercontent.com/100666326/171131472-eb2d05e1-c659-4d80-8258-7f1b006d9b5e.png)
