@@ -7,7 +7,7 @@
 # 就業Termの技術
 ---
 * devise
-* rails_admin
+* Ajaxを使ったコメント機能
 ---
 # カリキュラム外の技術
 * ransack
