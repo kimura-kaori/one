@@ -35,3 +35,4 @@ https://cacoo.com/diagrams/oa4gv2TlyOdH7Hxt/6310E
 # 画面遷移図
 ---
 https://cacoo.com/diagrams/oa4gv2TlyOdH7Hxt/808F5
+![スクリーンショット 2022-05-31 17 31 14](https://user-images.githubusercontent.com/100666326/171130558-beb6e5d9-8a9f-42a9-a34c-7ff5f43d27bc.png)
