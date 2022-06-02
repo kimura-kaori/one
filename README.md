@@ -14,11 +14,11 @@
 ---
 # 実行手順
 ---
-$ git clone git@github.com:kimura-kaori/one.git
-$ cd one
-$ bundle install
-$ rails db:create && rails db:migrate
-$ rails s
+'''$ git clone git@github.com:kimura-kaori/one.git'''
+'''$ cd one'''
+'''$ bundle install'''
+'''$ rails db:create && rails db:migrate'''
+'''$ rails s'''
 
 # カタログ設計
 ---
