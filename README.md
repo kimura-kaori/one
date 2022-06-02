@@ -26,7 +26,7 @@ https://docs.google.com/spreadsheets/d/1cjFq1IeK52mAFR7_4GGIdYQJ2ugs4N0gqTImueBf
 # ER図
 ---
 https://cacoo.com/diagrams/oa4gv2TlyOdH7Hxt/B551C
-![スクリーンショット 2022-05-30 22 57 27](https://user-images.githubusercontent.com/100666326/171131964-592d271a-6d5c-45d4-b887-b52cd3138d66.png)
+![スクリーンショット 2022-06-02 15 36 18](https://user-images.githubusercontent.com/100666326/171568285-ef345471-bfae-47a9-b513-8b745a319938.png)
 # テーブル定義書
 ---
 https://docs.google.com/spreadsheets/d/1cjFq1IeK52mAFR7_4GGIdYQJ2ugs4N0gqTImueBfpI0/edit?usp=sharing
