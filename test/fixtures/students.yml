@@ -1,0 +1,27 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  update_date: 2022-06-03
+  student_furigana: MyString
+  student_name: MyString
+  sex: MyString
+  birthday: 2022-06-03
+  telephone: 1
+  cellphone: 1
+  adress: MyString
+  parents_furigana: MyString
+  parents_name: MyString
+  relationship: MyString
+
+two:
+  update_date: 2022-06-03
+  student_furigana: MyString
+  student_name: MyString
+  sex: MyString
+  birthday: 2022-06-03
+  telephone: 1
+  cellphone: 1
+  adress: MyString
+  parents_furigana: MyString
+  parents_name: MyString
+  relationship: MyString
