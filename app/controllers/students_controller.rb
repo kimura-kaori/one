@@ -1,10 +1,11 @@
 class StudentsController < ApplicationController
   before_action :set_student, only: %i[ show edit update destroy ]
   before_action :authenticate_user!
-  # before_action :user_check, only: %i[ index new show edit update destroy ]
+  before_action :user_confirmation, only: %i[ show edit update destroy ]
 
   def index
-    @students = Student.all
+    #ログインしているユーザーに紐づく生徒情報だけ表示.
+    @students = Student.includes(:user).where(user_id: current_user.id)
   end
 
   def show
@@ -62,8 +63,9 @@ class StudentsController < ApplicationController
       params.require(:student).permit(:student_furigana, :student_name, :sex, :birthday, :telephone, :cellphone, :post_code, :address, :parents_furigana, :parents_name, :relationship)
     end
 
-    # def user_check
-    #   @student = Student.find(params[:id])
-    #   redirect_to root_path unless @student.id == current_user.id
-    # end
+    def user_confirmation
+      @student = Student.find(params[:id])
+      @user = @student.user
+      redirect_to root_path unless @user == current_user
+    end
 end
