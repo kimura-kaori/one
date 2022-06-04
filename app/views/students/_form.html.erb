@@ -12,11 +12,6 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :update_date %>
-    <%= form.date_select :update_date %>
-  </div>
-
-  <div class="field">
     <%= form.label :student_furigana %>
     <%= form.text_field :student_furigana %>
   </div>
@@ -47,8 +42,13 @@
   </div>
 
   <div class="field">
-    <%= form.label :adress %>
-    <%= form.text_field :adress %>
+    <%= form.label :post_code %>
+    <%= form.text_field :post_code %>
+  </div>
+
+  <div class="field">
+    <%= form.label :address %>
+    <%= form.text_field :address %>
   </div>
 
   <div class="field">

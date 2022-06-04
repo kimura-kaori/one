@@ -3,13 +3,13 @@
 <table>
   <thead>
     <tr>
-      <th>Update date</th>
       <th>Student furigana</th>
       <th>Student name</th>
       <th>Sex</th>
       <th>Birthday</th>
       <th>Telephone</th>
       <th>Cellphone</th>
+      <th>Post code</th>
       <th>Address</th>
       <th>Parents furigana</th>
       <th>Parents name</th>
@@ -21,13 +21,13 @@
   <tbody>
     <% @students.each do |student| %>
       <tr>
-        <td><%= student.update_date %></td>
         <td><%= student.student_furigana %></td>
         <td><%= student.student_name %></td>
         <td><%= student.sex %></td>
         <td><%= student.birthday %></td>
         <td><%= student.telephone %></td>
         <td><%= student.cellphone %></td>
+        <td><%= student.post_code %></td>
         <td><%= student.address %></td>
         <td><%= student.parents_furigana %></td>
         <td><%= student.parents_name %></td>
