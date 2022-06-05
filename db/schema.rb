@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_06_05_064454) do
+ActiveRecord::Schema.define(version: 2022_06_05_072717) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,6 +23,15 @@ ActiveRecord::Schema.define(version: 2022_06_05_064454) do
     t.string "family"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "student_family_environments", force: :cascade do |t|
+    t.bigint "student_id"
+    t.bigint "family_environment_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["family_environment_id"], name: "index_student_family_environments_on_family_environment_id"
+    t.index ["student_id"], name: "index_student_family_environments_on_student_id"
   end
 
   create_table "students", force: :cascade do |t|
@@ -66,5 +75,7 @@ ActiveRecord::Schema.define(version: 2022_06_05_064454) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "student_family_environments", "family_environments"
+  add_foreign_key "student_family_environments", "students"
   add_foreign_key "students", "users"
 end
