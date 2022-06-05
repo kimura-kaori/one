@@ -2,3 +2,13 @@ ja:
   students:
     index:
       student_furigana: 生徒名（ふりがな）
+      student_name: 生徒名（漢字）
+      sex: 性別
+      birthday: 生年月日
+      telephone: （自宅）電話番号
+      cellphone: （携帯）電話番号
+      post_code:  郵便番号
+      address: 現住所
+      parents_furigana: 保護者名（ふりがな）
+      parents_name: 保護者名（漢字）
+      relationship: 続柄

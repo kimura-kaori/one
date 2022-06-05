@@ -1,0 +1,2 @@
+module FamilyEnvironmentsHelper
+end
