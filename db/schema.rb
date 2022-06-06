@@ -10,10 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_06_05_072717) do
+ActiveRecord::Schema.define(version: 2022_06_06_015834) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "emergency_contacts", force: :cascade do |t|
+    t.string "name"
+    t.string "relationship"
+    t.string "contact_address"
+    t.string "telephone"
+    t.bigint "student_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["student_id"], name: "index_emergency_contacts_on_student_id"
+  end
 
   create_table "family_environments", force: :cascade do |t|
     t.string "relationship"
@@ -75,6 +86,7 @@ ActiveRecord::Schema.define(version: 2022_06_05_072717) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "emergency_contacts", "students"
   add_foreign_key "student_family_environments", "family_environments"
   add_foreign_key "student_family_environments", "students"
   add_foreign_key "students", "users"

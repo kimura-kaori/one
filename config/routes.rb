@@ -1,6 +1,4 @@
 Rails.application.routes.draw do
-
-  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   root 'top#index'
   devise_for :users
   resources :students do
@@ -9,6 +7,9 @@ Rails.application.routes.draw do
     end
   end
   resources :family_environments
+  resources :emergency_contacts
+
+  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
 
   if Rails.env.development?
     mount LetterOpenerWeb::Engine, at: "/letter_opener"
