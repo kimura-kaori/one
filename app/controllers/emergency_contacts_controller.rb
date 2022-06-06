@@ -15,6 +15,10 @@ class EmergencyContactsController < ApplicationController
 
   def new
     @emergency_contact = EmergencyContact.new
+
+    2.times do
+      @emergency_contact.students.build
+    end
   end
 
   def edit

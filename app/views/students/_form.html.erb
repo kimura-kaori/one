@@ -22,8 +22,10 @@
   </div>
 
   <div class="field">
-    <%= form.label :sex %>
-    <%= form.text_field :sex %>
+    <%= form.radio_button :sex, :male %>
+   <%= form.label :sex, "男性", {value: :male, style: "display: inline-block;"} %>
+   <%= form.radio_button :sex, :female %>
+   <%= form.label :sex, "女性", {value: :female, style: "display: inline-block;"} %>
   </div>
 
   <div class="field">
