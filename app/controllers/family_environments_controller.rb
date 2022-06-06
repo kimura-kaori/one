@@ -3,7 +3,8 @@ class FamilyEnvironmentsController < ApplicationController
 
   # GET /family_environments or /family_environments.json
   def index
-    @family_environments = FamilyEnvironment.includes(:student).where(family_environment_id: current_user.id)
+    @family_environments = FamilyEnvironment.all
+    # @family_environments = FamilyEnvironment.includes(:student).where(family_environment_id: current_user.id)
   end
 
   # GET /family_environments/1 or /family_environments/1.json

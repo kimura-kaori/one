@@ -24,7 +24,7 @@
         <td><%= emergency_contact.student_id %></td>
         <td><%= link_to 'Show', emergency_contact %></td>
         <td><%= link_to 'Edit', edit_emergency_contact_path(emergency_contact) %></td>
-        <td><%= link_to 'Destroy', emergency_contact, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= button_to 'Destroy', emergency_contact, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>

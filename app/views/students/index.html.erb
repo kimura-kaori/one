@@ -13,9 +13,9 @@
       <tr>
 
         <td><%= student.student_name %></td>
-        <td><%= link_to '詳細', student %></td>
-        <td><%= link_to '編集', edit_student_path(student) %></td>
-        <td><%= link_to '削除', student, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= button_to '詳細', student %></td>
+        <td><%= button_to '編集', edit_student_path(student) %></td>
+        <td><%= button_to '削除', student, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>

@@ -22,7 +22,7 @@
         <td><%= family_environment.family %></td>
         <td><%= link_to 'Show', family_environment %></td>
         <td><%= link_to 'Edit', edit_family_environment_path(family_environment) %></td>
-        <td><%= link_to 'Destroy', family_environment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= button_to 'Destroy', family_environment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
