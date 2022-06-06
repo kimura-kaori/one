@@ -3,10 +3,10 @@ class StudentsController < ApplicationController
   before_action :authenticate_user!
   before_action :user_confirmation, only: %i[ show edit update destroy ]
 
-  def index
-    #ログインしているユーザーに紐づく生徒情報だけ表示.
-    @students = Student.includes(:user).where(user_id: current_user.id)
-  end
+  # def index
+  #   #ログインしているユーザーに紐づく生徒情報だけ表示.
+  #   @students = Student.includes(:user).where(user_id: current_user.id)
+  # end
 
   def show
   end
@@ -51,6 +51,11 @@ class StudentsController < ApplicationController
       format.html { redirect_to students_url, notice: "Student was successfully destroyed." }
       format.json { head :no_content }
     end
+  end
+
+  def mypage
+    @students = Student.includes(:user).where(user_id: current_user.id)
+    # @students = Student.pluck(:student_name)
   end
 
   private

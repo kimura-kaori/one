@@ -3,8 +3,11 @@ ja:
     models:
       student: 生徒
       user: ユーザー
+      family_environment: 家庭環境調査
+      student_family_environment: 中間テーブル（仮）
     attributes:
       student:
+      family_environment:
         student_furigana: 生徒名（ふりがな）
         student_name: 生徒名（漢字）
         sex: 性別
@@ -16,3 +19,9 @@ ja:
         parents_furigana: 保護者名（ふりがな）
         parents_name: 保護者名（漢字）
         relationship: 続柄
+        name: 氏名
+        age: 年齢
+        created_at: 作成日時
+        family: 兄弟姉妹
+        updated_at: 更新日時
+        students: 生徒情報
