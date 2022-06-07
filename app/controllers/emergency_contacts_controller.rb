@@ -2,30 +2,36 @@ class EmergencyContactsController < ApplicationController
   before_action :set_emergency_contact, only: %i[ show edit update destroy ]
 
   def index
-    @emergency_contacts = EmergencyContact.all
-    # @emergency_contacts = EmergencyContact.includes(:student).where(student_id: current_user.id)
+    @emergency_contacts =EmergencyContact.includes(:student).where(student_id: student.id)
+    # if params[:student_id]
+    #   # Studentのデータベースのテーブルから一致するidを取得
+    #   @student = Student.find(params[:student_id])
+    #
+    #   # student_idと紐づく緊急連絡先を取得
+    #   @emergency_contacts = @student.emergency_contacts.order(created_at: :desc).all
+    # # else
+    #   # 緊急連絡先すべてを取得
+    # #   @emergency_contacts = Emergency_contact.order(created_at: :desc).all
+    # end
+
   end
 
-  # def mypage
-  #     @emergency_contacts = EmergencyContact.includes(:student).where(student_id: current_user.id)
-  # end
-  # GET /emergency_contacts/1 or /emergency_contacts/1.json
   def show
   end
 
   def new
     @emergency_contact = EmergencyContact.new
 
-    2.times do
-      @emergency_contact.students.build
-    end
+    # 2.times do
+    #   @emergency_contact.students.build
+    # end
   end
 
   def edit
   end
 
   def create
-    @emergency_contact = EmergencyContact.new(emergency_contact_params)
+    @emergency_contact = student.emergency_contacts.build(emergency_contact_params)
 
     respond_to do |format|
       if @emergency_contact.save
@@ -67,4 +73,11 @@ class EmergencyContactsController < ApplicationController
     def emergency_contact_params
       params.require(:emergency_contact).permit(:name, :relationship, :contact_address, :telephone, :student_id)
     end
+
+    def user_confirmation
+      @student = Student.find(params[:id])
+      @user = @student.user
+      redirect_to root_path unless @user == current_user
+    end
+
 end

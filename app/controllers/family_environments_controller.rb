@@ -1,28 +1,23 @@
 class FamilyEnvironmentsController < ApplicationController
   before_action :set_family_environment, only: %i[ show edit update destroy ]
 
-  # GET /family_environments or /family_environments.json
   def index
     @family_environments = FamilyEnvironment.all
-    # @family_environments = FamilyEnvironment.includes(:student).where(family_environment_id: current_user.id)
+    # @family_environments = FamilyEnvironment.includes(:student).where(student_id: student.id)
   end
 
-  # GET /family_environments/1 or /family_environments/1.json
   def show
   end
 
-  # GET /family_environments/new
   def new
     @family_environment = FamilyEnvironment.new
   end
 
-  # GET /family_environments/1/edit
   def edit
   end
 
-  # POST /family_environments or /family_environments.json
   def create
-    @family_environment = FamilyEnvironment.new(family_environment_params)
+    @family_environment = student.family_environments.build(family_environment_params)
 
     respond_to do |format|
       if @family_environment.save
@@ -35,7 +30,6 @@ class FamilyEnvironmentsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /family_environments/1 or /family_environments/1.json
   def update
     respond_to do |format|
       if @family_environment.update(family_environment_params)
@@ -48,7 +42,6 @@ class FamilyEnvironmentsController < ApplicationController
     end
   end
 
-  # DELETE /family_environments/1 or /family_environments/1.json
   def destroy
     @family_environment.destroy
 
@@ -59,13 +52,13 @@ class FamilyEnvironmentsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
+
     def set_family_environment
       @family_environment = FamilyEnvironment.find(params[:id])
     end
 
-    # Only allow a list of trusted parameters through.
     def family_environment_params
       params.require(:family_environment).permit(:relationship, :name, :birthday, :age, :family, :student_id)
     end
+
 end

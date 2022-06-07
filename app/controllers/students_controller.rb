@@ -19,7 +19,7 @@ class StudentsController < ApplicationController
   end
 
   def create
-    @student = Student.new(student_params)
+    @student = current_user.students.build(student_params)
 
     respond_to do |format|
       if @student.save
