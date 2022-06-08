@@ -1,12 +1,25 @@
 class FamilyEnvironmentsController < ApplicationController
-  before_action :set_family_environment, only: %i[ show edit update destroy ]
+  before_action :set_family_environment, only: %i[  edit update destroy ]
 
   def index
-    @family_environments = FamilyEnvironment.all
+    @student = Student.find(params[:id])
+
+
+    # @student_family_environment_students = StudentFamilyEnvironment.find_by(student_id: @student.id)
+    # @family_environment = FamilyEnvironment.find(params[:student_id])
+    @my_family_environments = @student.family_environments
+
     # @family_environments = FamilyEnvironment.includes(:student).where(student_id: student.id)
   end
 
   def show
+    @family_environment = FamilyEnvironment.find(params[:id])
+    #     binding.irb
+    # @my_family_environmens = StudentFamilyEnvironment.find_by(student_id: @student.id)
+    # @family_environment = FamilyEnvironment.find(params[:student_id])
+    # @my_family_environments = @student.my_family_environments
+    # @family_environment =@student.family_environment
+
   end
 
   def new
@@ -17,16 +30,15 @@ class FamilyEnvironmentsController < ApplicationController
   end
 
   def create
-    @family_environment = student.family_environments.build(family_environment_params)
+    @student = Student.find(params[:id])
+    @family_environment = @student.family_environments.build(family_environment_params)
 
-    respond_to do |format|
-      if @family_environment.save
-        format.html { redirect_to family_environment_url(@family_environment), notice: "Family environment was successfully created." }
-        format.json { render :show, status: :created, location: @family_environment }
-      else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @family_environment.errors, status: :unprocessable_entity }
-      end
+    # @family_environment = student.family_environments.build(family_environment_params)
+
+    if @family_environment.save!
+      redirect_to family_environment_url(@student, @family_environment), notice: "Family environment was successfully created."
+    else
+      render :new, status: :unprocessable_entity
     end
   end
 

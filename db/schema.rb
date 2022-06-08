@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_06_06_015834) do
+ActiveRecord::Schema.define(version: 2022_06_07_132124) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -34,6 +34,8 @@ ActiveRecord::Schema.define(version: 2022_06_06_015834) do
     t.string "family"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "student_id"
+    t.index ["student_id"], name: "index_family_environments_on_student_id"
   end
 
   create_table "student_family_environments", force: :cascade do |t|
@@ -87,6 +89,7 @@ ActiveRecord::Schema.define(version: 2022_06_06_015834) do
   end
 
   add_foreign_key "emergency_contacts", "students"
+  add_foreign_key "family_environments", "students"
   add_foreign_key "student_family_environments", "family_environments"
   add_foreign_key "student_family_environments", "students"
   add_foreign_key "students", "users"

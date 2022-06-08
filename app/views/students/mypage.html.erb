@@ -10,18 +10,20 @@
   <tr>
     <tr>
       <th>家庭環境調査</th>
-      <td><%= link_to '詳細', family_environment_path(student.id)  %></td>
+      <td><%= link_to '新規登録', new_family_environment_path(student.id) %></td>
+      <td><%= link_to '詳細', family_environments_path(student.id) %></td>
       <td><%= link_to '編集', edit_family_environment_path(student.id) %></td>
+
     </tr>
     <tr>
       <th>緊急連絡先</th>
-      <td><%= link_to '詳細', student %></td>
-      <td><%= link_to '編集', student %></td>
+      <td><%= link_to '新規登録', new_emergency_contact_path %></td>
+      <td><%= link_to '詳細', emergency_contact_path(student.id) %></td>
+      <td><%= link_to '編集', edit_emergency_contact_path(student.id) %></td>
   </tr>
   <% end %>
 </table>
 
+
 <p>新規生徒の登録は下記よりお手続きください。</p>
 <%= link_to '基本情報登録', new_student_path %>
-<%= link_to '家庭環境調査登録', new_family_environment_path %>
-<%= link_to '緊急連絡先登録', new_emergency_contact_path %>
