@@ -1,5 +1,4 @@
 class FamilyEnvironmentsController < ApplicationController
-  # before_action :set_family_environment, only: %i[  edit update destroy ]
 
   def index
     @student = Student.find(params[:student_id])
@@ -46,10 +45,6 @@ class FamilyEnvironmentsController < ApplicationController
   end
 
   private
-
-    # def set_family_environment
-    #   @family_environment = FamilyEnvironment.find(params[:id])
-    # end
 
     def family_environment_params
       params.require(:family_environment).permit(:relationship, :name, :birthday, :age, :family, :student_id)

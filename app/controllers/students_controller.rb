@@ -45,12 +45,9 @@ class StudentsController < ApplicationController
   end
 
   def destroy
+    @student = Student.find(params[:id])
     @student.destroy
-
-    respond_to do |format|
-      format.html { redirect_to students_url, notice: "Student was successfully destroyed." }
-      format.json { head :no_content }
-    end
+      redirect_to students_url, notice: "Student was successfully destroyed." 
   end
 
   def mypage

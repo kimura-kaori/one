@@ -19,5 +19,5 @@
 </p>
 
 
-<%= link_to 'Edit', edit_student_emergency_contact_path(@emergency_contact) %> |
+<%= link_to 'Edit', edit_student_emergency_contact_path(@emergency_contact.student.id, @emergency_contact.id) %> |
 <%= link_to 'マイページ', mypage_students_path %>

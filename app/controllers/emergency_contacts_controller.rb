@@ -1,5 +1,4 @@
 class EmergencyContactsController < ApplicationController
-  before_action :set_emergency_contact, only: %i[  edit update destroy ]
 
   def index
     @student = Student.find(params[:student_id])
@@ -25,12 +24,13 @@ class EmergencyContactsController < ApplicationController
   end
 
   def edit
-    # binding.irb
     @student = Student.find(params[:student_id])
+    @emergency_contact = EmergencyContact.find(params[:id])
   end
 
   def update
-      @student = Student.find(params[:student_id])
+    @student = Student.find(params[:student_id])
+    @emergency_contact = EmergencyContact.find(params[:id])
       if @emergency_contact.update(emergency_contact_params)
         redirect_to student_emergency_contact_path(@student, @emergency_contact), notice: "Emergency contact was successfully updated."
       else
@@ -39,16 +39,12 @@ class EmergencyContactsController < ApplicationController
   end
 
   def destroy
+    @emergency_contact = EmergencyContact.find(params[:id])
     @emergency_contact.destroy
       redirect_to student_emergency_contact_path, notice: "Emergency contact was successfully destroyed."
     end
 
-
   private
-
-    def set_emergency_contact
-      @emergency_contact = EmergencyContact.find(params[:id])
-    end
 
     def emergency_contact_params
       params.require(:emergency_contact).permit(:name, :relationship, :contact_address, :telephone, :student_id)
