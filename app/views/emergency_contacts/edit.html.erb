@@ -2,5 +2,5 @@
 
 <%= render 'form', emergency_contact: @emergency_contact %>
 
-<%= link_to 'Show', @emergency_contact %>
-<%= link_to 'マイページ', mypage_students_path %> %>
+<%= link_to 'Show', student_emergency_contact_path(@student,@emergency_contact)  %>
+<%= link_to 'マイページ', mypage_students_path %>

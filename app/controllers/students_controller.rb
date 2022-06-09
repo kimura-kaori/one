@@ -55,6 +55,7 @@ class StudentsController < ApplicationController
 
   def mypage
     @students = Student.includes(:user).where(user_id: current_user.id)
+
     # @students = Student.pluck(:student_name)
   end
 

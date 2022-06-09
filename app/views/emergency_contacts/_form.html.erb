@@ -1,19 +1,16 @@
-<%= form_with(model: emergency_contact, local: true) do |form| %>
-  <% if emergency_contact.errors.any? %>
+<%= form_with(model: @emergency_contact, url:choose_new_or_edit,local: true) do |form| %>
+  <% if @emergency_contact.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(emergency_contact.errors.count, "error") %> prohibited this emergency_contact from being saved:</h2>
+      <h2><%= pluralize(@emergency_contact.errors.count, "error") %> prohibited this emergency_contact from being saved:</h2>
 
       <ul>
-        <% emergency_contact.errors.full_messages.each do |message| %>
+        <% @emergency_contact.errors.full_messages.each do |message| %>
           <li><%= message %></li>
         <% end %>
       </ul>
     </div>
   <% end %>
 
-  <% n = 0 %>
-    <%= form.fields_for :emergency_contacts do |form|%>
-    <h4>緊急連絡先<%= n+=1 %></h4>
   <div class="field">
     <%= form.label :name %>
     <%= form.text_field :name %>
@@ -33,7 +30,7 @@
     <%= form.label :telephone %>
     <%= form.text_field :telephone %>
   </div>
-  <% end %>
+
   <div class="actions">
     <%= form.submit %>
   </div>

@@ -5,12 +5,13 @@ Rails.application.routes.draw do
     collection do
       get :mypage
     end
-    member do
+
       resources :family_environments
-    end
+
+
+      resources :emergency_contacts
+
   end
-  
-  resources :emergency_contacts
 
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
 

@@ -5,21 +5,17 @@
   <tr>
     <th>基本情報</th>
     <td><%= link_to '詳細', student %></td>
-    <td><%= link_to '編集', edit_student_path(student.id) %></td>
   </tr>
   <tr>
     <tr>
       <th>家庭環境調査</th>
-      <td><%= link_to '新規登録', new_family_environment_path(student.id) %></td>
-      <td><%= link_to '詳細', family_environments_path(student.id) %></td>
-      <td><%= link_to '編集', edit_family_environment_path(student.id) %></td>
-
+      <td><%= link_to '新規登録', new_student_family_environment_path(student.id) %></td>
+      <td><%= link_to '詳細', student_family_environments_path(student.id) %></td>
     </tr>
     <tr>
       <th>緊急連絡先</th>
-      <td><%= link_to '新規登録', new_emergency_contact_path %></td>
-      <td><%= link_to '詳細', emergency_contact_path(student.id) %></td>
-      <td><%= link_to '編集', edit_emergency_contact_path(student.id) %></td>
+      <td><%= link_to '新規登録', new_student_emergency_contact_path(student.id)%></td>
+      <td><%= link_to '詳細', student_emergency_contacts_path(student.id) %></td>
   </tr>
   <% end %>
 </table>
