@@ -16,10 +16,12 @@ class EmergencyContactsController < ApplicationController
   def create
     @student = Student.find(params[:student_id])
     @emergency_contact = @student.emergency_contacts.build(emergency_contact_params)
-      if @emergency_contact.save!
+      if @emergency_contact.save
         redirect_to student_emergency_contact_url(@student, @emergency_contact), notice: "Emergency contact was successfully created."
       else
-        render :new, status: :unprocessable_entity
+        render :new
+        # flash[:danger] = @emergency_contact.errors.full_messages
+        # redireect_to new_student_emergency_contact_path
       end
   end
 
