@@ -5,6 +5,9 @@ Rails.application.routes.draw do
     collection do
       get :mypage
     end
+    collection do
+      get :report
+    end
       resources :family_environments
       resources :emergency_contacts
   end

@@ -16,10 +16,12 @@
       <th>緊急連絡先</th>
       <td><%= link_to '新規登録', new_student_emergency_contact_path(student.id)%></td>
       <td><%= link_to '詳細', student_emergency_contacts_path(student.id) %></td>
-  </tr>
-  <% end %>
-</table>
+    </tr>
 
+    <p>全ての入力完了後、下記をクリックして下さい。</p>
+      <%= link_to '登録内容を学校へ通知', report_students_path, student_id: "test" %>
+<% end %>
+</table>
 
 <p>新規生徒の登録は下記よりお手続きください。</p>
 <%= link_to '基本情報登録', new_student_path %>

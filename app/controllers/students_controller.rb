@@ -47,13 +47,16 @@ class StudentsController < ApplicationController
   def destroy
     @student = Student.find(params[:id])
     @student.destroy
-      redirect_to students_url, notice: "Student was successfully destroyed." 
+      redirect_to students_url, notice: "Student was successfully destroyed."
   end
 
   def mypage
     @students = Student.includes(:user).where(user_id: current_user.id)
+  end
 
-    # @students = Student.pluck(:student_name)
+  def report
+    @student = Student.find(params[:student_id])
+    ReportMailer.send_message_to_school(@student).deliver
   end
 
   private
