@@ -20,8 +20,6 @@ class EmergencyContactsController < ApplicationController
         redirect_to student_emergency_contact_url(@student, @emergency_contact), notice: "Emergency contact was successfully created."
       else
         render :new
-        # flash[:danger] = @emergency_contact.errors.full_messages
-        # redireect_to new_student_emergency_contact_path
       end
   end
 

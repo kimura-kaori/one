@@ -16,10 +16,10 @@ class FamilyEnvironmentsController < ApplicationController
   def create
     @student = Student.find(params[:student_id])
     @family_environment = @student.family_environments.build(family_environment_params)
-    if @family_environment.save!
+    if @family_environment.save
       redirect_to student_family_environment_path(@student, @family_environment), notice: "Family environment was successfully created."
     else
-      render :new, status: :unprocessable_entity
+      render :new
     end
   end
 
