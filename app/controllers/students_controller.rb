@@ -55,7 +55,7 @@ class StudentsController < ApplicationController
   end
 
   def report
-    @student = Student.find(params[:student_id])
+    @student = Student.find(params[:id])
     ReportMailer.send_message_to_school(@student).deliver
   end
 

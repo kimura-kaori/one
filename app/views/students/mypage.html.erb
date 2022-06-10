@@ -18,8 +18,8 @@
       <td><%= link_to '詳細', student_emergency_contacts_path(student.id) %></td>
     </tr>
 
-    <p>全ての入力完了後、下記をクリックして下さい。</p>
-      <%= link_to '登録内容を学校へ通知', report_students_path, student_id: "test" %>
+    <td>全ての入力完了後、下記をクリックして下さい。</td>
+    <td><%= link_to '登録内容を学校へ通知', report_student_path(student.id) %></td>
 <% end %>
 </table>
 
