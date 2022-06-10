@@ -1,26 +1,35 @@
 <h1>マイページ</h1>
 <table>
-<% @students.each do |student| %>
-  <td><%= student.student_name %></td>
-  <tr>
-    <th>基本情報</th>
-    <td><%= link_to '詳細', student %></td>
-  </tr>
-  <tr>
+  <% @students.each do |student| %>
+    <tr>
+      <td><%= student.student_name %></td>
+    </tr>
+    <tr>
+      <th>基本情報</th>
+      <td><%= link_to '詳細', student %></td>
+    </tr>
+    <tr>
     <tr>
       <th>家庭環境調査</th>
-      <td><%= link_to '新規登録', new_student_family_environment_path(student.id) %></td>
-      <td><%= link_to '詳細', student_family_environments_path(student.id) %></td>
+      <% if student.family_environments.empty?%>
+        <td><%= link_to '新規登録', new_student_family_environment_path(student.id) %></td>
+      <% else %>
+        <td><%= link_to '詳細', student_family_environments_path(student.id) %></td>
+      <% end %>
     </tr>
     <tr>
       <th>緊急連絡先</th>
-      <td><%= link_to '新規登録', new_student_emergency_contact_path(student.id)%></td>
-      <td><%= link_to '詳細', student_emergency_contacts_path(student.id) %></td>
+      <% if student.emergency_contacts.empty?%>
+        <td><%= link_to '新規登録', new_student_emergency_contact_path(student.id)%></td>
+      <% else %>
+        <td><%= link_to '詳細', student_emergency_contacts_path(student.id) %></td>
+      <% end %>
     </tr>
-
-    <td>全ての入力完了後、下記をクリックして下さい。</td>
+    <tr>
+      <td>全ての入力完了後、下記をクリックして下さい。</td>
+    </tr>
     <td><%= link_to '登録内容を学校へ通知', report_student_path(student.id) %></td>
-<% end %>
+  <% end %>
 </table>
 
 <p>新規生徒の登録は下記よりお手続きください。</p>
