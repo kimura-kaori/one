@@ -1,10 +1,27 @@
 // Place all the styles related to the top controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
-// .background {
-//   background-image: image-url('new_haikei.png');
+
+// header {
+//
+// height: 500px; /* 空の要素なので、高さの定義が必要です。 */
+//
+// background-image: url("./pexels-kulbir-11408206.jpg");
+// background-position: center;
+// background-size: cover;
 // }
-// .background{
-//  background-image: url("<%= asset_path('new_haikei.jpg') %>")
+// .imgArea {
+//   display    : inline-block;
+//   position   : relative;
+//   padding    : 0
 // }
-// .background: url("../new_haikei.jpg");
+
+// body {
+//   background-image: url("./new_haikei.jpg");
+//   background-position: center center;
+//   background-repeat: no-repeat;
+//   background-attachment: fixed;
+//   background-size: cover;
+//   background-color: #464646;
+//   z-index: 0;
+// }

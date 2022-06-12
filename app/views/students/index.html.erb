@@ -1,25 +1,24 @@
 <h1>Students</h1>
+<head>
+  <title>テーブルサンプル</title>
+</head>
 
-<table>
-  <thead>
-    <tr>
-      <th>生徒名</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @students.each do |student| %>
-      <tr>
-
-        <td><%= student.student_name %></td>
-        <td><%= link_to '詳細', student %></td>
-        <td><%= link_to '編集', edit_student_path(student) %></td>        
-      </tr>
-    <% end %>
+<body>
+  <table class="table">
+    <thead>
+        <tr>
+          <th>生徒名</th>
+        </tr>
+      </thead>
+      <tbody>
+      <% @students.each do |student| %>
+        <tr>
+          <td><%= student.student_name %></td>
+          <td><%= link_to '詳細', student %></td>
+          <td><%= link_to '編集', edit_student_path(student) %></td>
+        </tr>
+      <% end %>
   </tbody>
 </table>
-
-<br>
 <%= link_to 'マイページ', mypage_students_path %>
 <%= link_to '新規生徒登録', new_student_path %>

@@ -1,9 +1,7 @@
-<h1>マイページ</h1>
+<h5>【　提出期限：６月３０日（木）　】</h5>
+<h5>期日内提出のご協力の程お願い申し上げます。</h5>
 
-<h3>【　提出期限：６月３０日（木）　】</h3>
-<h3>期日内提出のご協力の程お願い申し上げます。</h3>
-
-<table>
+<table class="table">
   <% @students.each do |student| %>
     <tr>
       <td><%= student.student_name %></td>
@@ -30,11 +28,9 @@
       <% end %>
     </tr>
     <tr>
-      <td>全ての入力完了後、下記をクリックして下さい。</td>
+      <td>全ての入力完了後、下記をクリックして下さい。<%= link_to '登録内容を学校へ通知', report_student_path(student.id) %></td>
     </tr>
-    <td><%= link_to '登録内容を学校へ通知', report_student_path(student.id) %></td>
   <% end %>
 </table>
-
-<p>新規生徒の登録は下記よりお手続きください。</p>
+<div>新規生徒の登録は下記よりお手続きください。</div>
 <%= link_to '基本情報登録', new_student_path %>

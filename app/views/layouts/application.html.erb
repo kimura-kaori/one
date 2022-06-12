@@ -1,29 +1,59 @@
 <!DOCTYPE html>
-<html>
+<html lang="ja">
   <head>
-    <title>One</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css" integrity="sha256-UzFD2WYH2U1dQpKDjjZK72VtPeWP50NoJjd26rnAdUI=" crossorigin="anonymous" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <title>One</title>
   </head>
-  <body>
-    <% if user_signed_in? %>
-      <%= link_to 'マイページ', mypage_students_path %>
-      <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
-    <% else %>
-      <%= link_to "新規登録", new_user_registration_path %>
-      <%= link_to "ログイン", new_user_session_path %>
+<header>
+  <body style="padding-top: 5rem">
+    <% if flash[:notice] %>
+      <div class="notification is-info">
+        <p class="notice"><%= notice %></p>
+      </div>
+    <% end %>
+    <% if flash[:alert] %>
+      <div class="notification is-danger">
+        <p class="alert"><%= alert %></p>
+      </div>
     <% end %>
 
-    <% if notice %>
-      <p class="alert alert-notice"><%= notice %></p>
-    <% end %>
-    <% if alert %>
-      <p class="alert alert-error"><%= alert %></p>
-    <% end %>
+      <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light ">
+        <%= link_to "top", root_path, class: 'navbar-brand ' %>
+        <div id="Navber ">
+          <ul class="navbar-nav ">
+            <% if user_signed_in? %>
+              <li class="nav-item active">
+                <%= link_to 'マイページ', mypage_students_path, class: 'nav-link' %>
+              </li>
+              <li class="nav-item active">
+                <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'nav-link ' %>
+              </li>
+          <% else %>
+              <li class="nav-item active">
+                <%= link_to "新規登録", new_user_registration_path, class: 'nav-link ' %>
+              </li>
+              <li class="nav-item active">
+                <%= link_to "ログイン", new_user_session_path, class: 'nav-link ' %>
+              </li>
+            <% end %>
+          </ul>
+        </div>
+      </nav>
+    </header>
 
     <%= yield %>
-  </body>
+
+
+  <div id="footer" class="fixed-bottom" style="height:50px; font-color:white; background-color: #f8f9fa!important;">
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>  </body>
 </html>

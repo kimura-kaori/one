@@ -13,3 +13,9 @@
  *= require_tree .
  *= require_self
  */
+.notification:not(:last-child){
+  margin-bottom: 0;
+}
+.navbar-dark .navbar-nav .nav-link:hover{
+color: #FFFF00;
+}
