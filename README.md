@@ -24,16 +24,16 @@ $ rails s
 https://docs.google.com/spreadsheets/d/1cjFq1IeK52mAFR7_4GGIdYQJ2ugs4N0gqTImueBfpI0/edit?usp=sharing
 # ER図
 ---
-https://cacoo.com/diagrams/oa4gv2TlyOdH7Hxt/B551C
-![スクリーンショット 2022-06-02 23 09 31](https://user-images.githubusercontent.com/100666326/171648583-b11ca3ed-02eb-463b-b1d3-a8f2a4e8a80f.png)
+![スクリーンショット 2022-06-13 14 11 15](https://user-images.githubusercontent.com/100666326/173283987-7b99c82d-cb86-4c2b-97db-fd43b42aa8be.png)
 
 # テーブル定義書
 ---
 https://docs.google.com/spreadsheets/d/1cjFq1IeK52mAFR7_4GGIdYQJ2ugs4N0gqTImueBfpI0/edit?usp=sharing
 # ワイヤーフレーム
 ---
-https://cacoo.com/diagrams/oa4gv2TlyOdH7Hxt/6310E
+![スクリーンショット 2022-06-13 16 14 47](https://user-images.githubusercontent.com/100666326/173299632-af0ab618-d918-4b8e-9789-b0c50f4de608.png)
+
 # 画面遷移図
 ---
 https://cacoo.com/diagrams/oa4gv2TlyOdH7Hxt/808F5
-![スクリーンショット 2022-05-31 17 41 26](https://user-images.githubusercontent.com/100666326/171131472-eb2d05e1-c659-4d80-8258-7f1b006d9b5e.png)
+![スクリーンショット 2022-06-13 14 52 56](https://user-images.githubusercontent.com/100666326/173288488-b203de08-a5e4-4439-bad8-483f39387042.png)
