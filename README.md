@@ -24,7 +24,8 @@ $ rails s
 https://docs.google.com/spreadsheets/d/1cjFq1IeK52mAFR7_4GGIdYQJ2ugs4N0gqTImueBfpI0/edit?usp=sharing
 # ER図
 ---
-![スクリーンショット 2022-06-13 14 11 15](https://user-images.githubusercontent.com/100666326/173283987-7b99c82d-cb86-4c2b-97db-fd43b42aa8be.png)
+![スクリーンショット 2022-06-13 16 20 51](https://user-images.githubusercontent.com/100666326/173300556-c20392fa-cf21-4257-863a-8c89687de776.png)
+
 
 # テーブル定義書
 ---
