@@ -11,32 +11,29 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :relationship %>
-    <%= form.text_field :relationship %>
-  </div>
+  <section class="section">
+    <div class="container">
+      <div class="columns is-centered">
+         <label for="formGroupExampleInput2" class="form-label"><%= form.label :student_furigana, "続柄", class: "label" %></label>
+         <input type="text_field" class="form-control" id="formGroupExampleInput2" placeholder=<%= form.text_field :relationship %>
+      <div class="column is-6">
+         <label for="formGroupExampleInput2" class="form-label"><%= form.label :name, "氏名", class: "label" %></label>
+         <input type="text_field" class="form-control" id="formGroupExampleInput2" placeholder=<%= form.text_field :name %>
 
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
-  </div>
+      <div class="column is-6">
+         <label for="formGroupExampleInput2" class="form-label"><%= form.label :birthday, "生年月日", class: "label" %></label>
+         <input type="text_field" class="form-control" id="formGroupExampleInput2" placeholder=<%= form.text_field :birthday %>
 
-  <div class="field">
-    <%= form.label :birthday %>
-    <%= form.text_field :birthday %>
-  </div>
 
-  <div class="field">
-    <%= form.label :age %>
-    <%= form.text_field :age %>
-  </div>
+      <div class="column is-6">
+         <label for="formGroupExampleInput2" class="form-label"><%= form.label :age, "年齢", class: "label" %></label>
+         <input type="text_field" class="form-control" id="formGroupExampleInput2" placeholder=<%= form.text_field :age %>
 
-  <div class="field">
-    <%= form.label :family %>
-    <%= form.text_field :family %>
-  </div>
+      <div class="column is-6">
+         <label for="formGroupExampleInput2" class="form-label"><%= form.label :family, "兄弟姉妹の校園名・学年・組/保護者・同居人の職業", class: "label" %></label>
+         <input type="text_field" class="form-control" id="formGroupExampleInput2" placeholder=<%= form.text_field :family %>
 
   <div class="actions">
-    <%= form.submit class: "button" %>
+    <%= form.submit class: "button" ,class: "btn btn-outline-success"%>
   </div>
-<% end %>
+  <% end %>

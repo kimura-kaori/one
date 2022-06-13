@@ -10,64 +10,60 @@
       </ul>
     </div>
   <% end %>
-  <div class="field">
-    <%= form.label :student_furigana %>
-    <%= form.text_field :student_furigana %>
-  </div>
 
-  <div class="field">
-    <%= form.label :student_name %>
-    <%= form.text_field :student_name %>
-  </div>
+  <section class="section">
+    <div class="container">
+      <div class="columns is-centered">
+        <label for="formGroupExampleInput2" class="form-label"><%= form.label :student_furigana, "student_furigana", class: "label" %></label>
+        <input type="text_field" class="form-control" id="formGroupExampleInput2" placeholder=<%= form.text_field :student_furigana %>
+      <div class="column is-6">
+        <label for="formGroupExampleInput2" class="form-label"><%= form.label :student_name, "student_name", class: "label" %></label>
+        <input type="text_field" class="form-control" id="formGroupExampleInput2" placeholder=<%= form.text_field :student_name %>
 
-  <div class="field">
-    <%= form.radio_button :sex, :男 %>
-    <%= form.label :sex, "男", {value: :男, style: "display: inline-block;"} %>
-    <%= form.radio_button :sex, :女 %>
-    <%= form.label :sex, "女", {value: :女, style: "display: inline-block;"} %>
-  </div>
+      <!-- <div class="form-check form-check-inline">
+        <label for="formGroupExampleInput2" class="form-label"> form.label :sex, "sex", class: "label" %></label>
+        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+        <label class="form-check-label" for="inlineRadio1">男</label>
+        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+        <label class="form-check-label" for="inlineRadio2">女</label>
+      </div> -->
 
-  <div class="field">
-    <%= form.label :birthday %>
-    <%= form.text_field :birthday %>
-  </div>
+      <div class="column is-6">
+        <label for="formGroupExampleInput2" class="form-label"><%= form.label :sex, "sex", class: "label" %></label>
+        <input type="text_field" class="form-control" id="formGroupExampleInput2" placeholder=<%= form.text_field :sex %>
 
-  <div class="field">
-    <%= form.label :telephone %>
-    <%= form.text_field :telephone %>
-  </div>
+      <div class="column is-6">
+        <label for="formGroupExampleInput2" class="form-label"><%= form.label :birthday, "birthday", class: "label" %></label>
+        <input type="text_field" class="form-control" id="formGroupExampleInput2" placeholder=<%= form.text_field :birthday %>
 
-  <div class="field">
-    <%= form.label :cellphone %>
-    <%= form.text_field :cellphone %>
-  </div>
 
-  <div class="field">
-    <%= form.label :post_code %>
-    <%= form.text_field :post_code %>
-  </div>
+      <div class="column is-6">
+        <label for="formGroupExampleInput2" class="form-label"><%= form.label :telephone, "telephone", class: "label" %></label>
+        <input type="text_field" class="form-control" id="formGroupExampleInput2" placeholder=<%= form.text_field :telephone %>
 
-  <div class="field">
-    <%= form.label :address %>
-    <%= form.text_field :address %>
-  </div>
+      <div class="column is-6">
+        <label for="formGroupExampleInput2" class="form-label"><%= form.label :cellphone, "cellphone", class: "label" %></label>
+        <input type="text_field" class="form-control" id="formGroupExampleInput2" placeholder=<%= form.text_field :cellphone %>
+      <div class="column is-6">
+        <label for="formGroupExampleInput2" class="form-label"><%= form.label :post_code, "post_code", class: "label" %></label>
+        <input type="text_field" class="form-control" id="formGroupExampleInput2" placeholder=<%= form.text_field :post_code %>
+      <div class="column is-6">
+        <label for="formGroupExampleInput2" class="form-label"><%= form.label :address, "address", class: "label" %></label>
+        <input type="text_field" class="form-control" id="formGroupExampleInput2" placeholder=<%= form.text_field :address %>
 
-  <div class="field">
-    <%= form.label :parents_furigana %>
-    <%= form.text_field :parents_furigana %>
-  </div>
+      <div class="column is-6">
+        <label for="formGroupExampleInput2" class="form-label"><%= form.label :parents_furigana, "parents_furigana", class: "label" %></label>
+        <input type="text_field" class="form-control" id="formGroupExampleInput2" placeholder=<%= form.text_field :parents_furigana %>
 
-  <div class="field">
-    <%= form.label :parents_name %>
-    <%= form.text_field :parents_name %>
-  </div>
+      <div class="column is-6">
+        <label for="formGroupExampleInput2" class="form-label"><%= form.label :parents_name, "parents_name", class: "label" %></label>
+        <input type="text_field" class="form-control" id="formGroupExampleInput2" placeholder=<%= form.text_field :parents_name %>
 
-  <div class="field">
-    <%= form.label :relationship %>
-    <%= form.text_field :relationship %>
-  </div>
+      <div class="column is-6">
+        <label for="formGroupExampleInput2" class="form-label"><%= form.label :relationship, "relationship", class: "label" %></label>
+        <input type="text_field" class="form-control" id="formGroupExampleInput2" placeholder=<%= form.text_field :relationship %>
 
   <div class="actions">
-    <%= form.submit class: "button" %>
+    <%= form.submit class: "button" ,class: "btn btn-outline-success"%>
   </div>
-<% end %>
+  <% end %>

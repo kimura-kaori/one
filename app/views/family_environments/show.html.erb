@@ -1,26 +1,23 @@
-<p>
-  <strong>Relationship:</strong>
-  <%= @family_environment.relationship %>
-</p>
-<p>
-  <strong>Name:</strong>
-  <%= @family_environment.name %>
-</p>
+<div class="mb-3">
+  <label for="formGroupExampleInput" class="form-label">続柄</label>
+  <input type="text" class="form-control" id="formGroupExampleInput" placeholder=<%=@family_environment.relationship %>>
+</div>
+<div class="mb-3">
+  <label for="formGroupExampleInput" class="form-label">氏名</label>
+  <input type="text" class="form-control" id="formGroupExampleInput" placeholder=<%=@family_environment.name %>>
+</div>
+<div class="mb-3">
+  <label for="formGroupExampleInput" class="form-label">生年月日</label>
+  <input type="text" class="form-control" id="formGroupExampleInput" placeholder=<%=@family_environment.birthday %>>
+</div>
+<div class="mb-3">
+  <label for="formGroupExampleInput" class="form-label">年齢</label>
+  <input type="text" class="form-control" id="formGroupExampleInput" placeholder=<%=@family_environment.age %>>
+</div>
+<div class="mb-3">
+  <label for="formGroupExampleInput" class="form-label">兄弟姉妹の校園名・学年・組/保護者・同居人の職業会社員</label>
+  <input type="text" class="form-control" id="formGroupExampleInput" placeholder=<%=@family_environment.family %>>
+</div>
 
-<p>
-  <strong>Birthday:</strong>
-  <%= @family_environment.birthday %>
-</p>
-
-<p>
-  <strong>Age:</strong>
-  <%= @family_environment.age %>
-</p>
-
-<p>
-  <strong>Family:</strong>
-  <%= @family_environment.family %>
-</p>
-
-<%= link_to 'Edit', edit_student_family_environment_path(@family_environment.student.id, @family_environment.id) %> |
-<%= link_to 'マイページ', mypage_students_path %>
+<%= link_to 'Edit', edit_student_family_environment_path(@family_environment.student.id, @family_environment.id) ,class: "btn btn-outline-success" %> |
+<%= link_to 'マイページ', mypage_students_path ,class: "btn btn-outline-success" %>
