@@ -72,6 +72,6 @@ class StudentsController < ApplicationController
     def user_confirmation
       @student = Student.find(params[:id])
       @user = @student.user
-      redirect_to root_path unless @user == current_user
+      redirect_to root_path unless @user == current_user || current_user.admin == true
     end
 end

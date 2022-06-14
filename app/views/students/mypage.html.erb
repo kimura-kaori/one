@@ -1,6 +1,7 @@
-<p>【　提出期限：６月３０日（木）　】</p>
-<h5>期日内提出のご協力の程お願い申し上げます。</h5>
-
+<p>【　提出期限：６月３０日（木）　】期日内提出のご協力の程お願い申し上げます。</p>
+<% if current_user.try(:admin?) %>
+  <%= link_to '管理画面', rails_admin_path ,class: "btn btn-outline-success"%>
+<% end %>
 <table class="table table-hover">
   <% @students.each do |student| %>
      <tr class="table-active">
@@ -41,5 +42,6 @@
     </tr>
   <% end %>
 </table>
-<div>新規生徒の登録は下記よりお手続きください。</div>
-<%= link_to '基本情報登録', new_student_path,class: "btn btn-sm btn-success text-white" %>
+
+  <div>新規生徒の登録は下記よりお手続きください。</div>
+  <%= link_to '基本情報登録', new_student_path,class: "btn btn-outline-success" %>
