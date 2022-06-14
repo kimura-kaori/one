@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
   root 'top#index'
   devise_for :users
+  resources :contacts do
+    resources :comments
+  end
   resources :students do
     collection do
       get :mypage

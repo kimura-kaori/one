@@ -10,10 +10,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_06_07_132124) do
+ActiveRecord::Schema.define(version: 2022_06_14_025205) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "comments", force: :cascade do |t|
+    t.bigint "contact_id"
+    t.bigint "user_id"
+    t.text "content"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["contact_id"], name: "index_comments_on_contact_id"
+    t.index ["user_id"], name: "index_comments_on_user_id"
+  end
+
+  create_table "contacts", force: :cascade do |t|
+    t.string "title"
+    t.bigint "user_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_contacts_on_user_id"
+  end
 
   create_table "emergency_contacts", force: :cascade do |t|
     t.string "name"
@@ -88,6 +106,9 @@ ActiveRecord::Schema.define(version: 2022_06_07_132124) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "comments", "contacts"
+  add_foreign_key "comments", "users"
+  add_foreign_key "contacts", "users"
   add_foreign_key "emergency_contacts", "students"
   add_foreign_key "family_environments", "students"
   add_foreign_key "student_family_environments", "family_environments"

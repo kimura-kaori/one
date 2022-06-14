@@ -6,20 +6,20 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-# User.create!(name: "管理者",
-#              email: "admin@admin.com",
-#              password: "111111",
-#              password_confirmation: "111111",
-#              admin: true)
-# 10.times do |n|
-#   email = Faker::Internet.email
-#   password = "password"
-#   User.create!(email: email,
-#                password: password,
-#                password_confirmation: password,
-#                admin: false,
-#                )
-# end
+User.create!(email: "adddmin@admin.com",
+             password: "111111",
+             password_confirmation: "111111",
+             admin: true)
+10.times do |n|
+  password = "password"
+  User.create!(email: "test#{n + 1}@test.com",
+               password: password,
+               password_confirmation: password,
+               admin: false,
+               )
+               user.skip_confirmation!
+               user.save!
+end
 # 10.times do |i|
 #   Student.create!(
 #     : "test#{i + 1}",
@@ -31,14 +31,14 @@
 #     label_ids: rand(1..10)
 # )
 # end
-10.times do |i|
-   name = Faker::Name.name
-   Family_environment.create!(
-     relationship: "",
-     name: name,
-     birthday: rand(0..2),
-     age: rand(0..2),
-     family: rand(1..10),
-     student: rand(1..10)
-)
-end
+# 10.times do |i|
+#    name = Faker::Name.name
+#    Family_environment.create!(
+#      relationship: "",
+#      name: name,
+#      birthday: rand(0..2),
+#      age: rand(0..2),
+#      family: rand(1..10),
+#      student: rand(1..10)
+# )
+# end
