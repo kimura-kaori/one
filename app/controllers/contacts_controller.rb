@@ -2,6 +2,8 @@ class ContactsController < ApplicationController
 
   def show
     @contact = Contact.find(params[:id])
+    @comments = @contact.comments
+    @comment = @contact.comments.build
   end
 
   def new
@@ -9,7 +11,7 @@ class ContactsController < ApplicationController
   end
 
   def create
-    @contact = current_user.contacts.build(title: "コメントルーム作成")
+    @contact = current_user.contacts.build(title: "コメントルーム")
 
     respond_to do |format|
       if @contact.save

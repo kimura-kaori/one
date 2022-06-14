@@ -54,6 +54,13 @@ class StudentsController < ApplicationController
     @students = Student.includes(:user).where(user_id: current_user.id)
   end
 
+  # def contact
+  #   @contact = Contact.find(params[:id])
+  #   @comments = @contact.comments
+  #   @comment = @contact.comments.build
+  #   end
+  # end
+
   def report
     @student = Student.find(params[:id])
     ReportMailer.send_message_to_school(@student).deliver
