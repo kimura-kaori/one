@@ -45,5 +45,5 @@
   <div>新規生徒の登録は下記よりお手続きください。</div>
   <%= link_to '基本情報登録', new_student_path,class: "btn btn-outline-success" %>
   <div>登録内容を変更いただいた場合は下記よりご連絡ください。</div>
-
-<%=link_to '連絡掲示板', contact_path(@contact.id),class: "btn btn-outline-success" %>
+<%=link_to '連絡掲示板を作る', new_contact_path, class: "btn btn-outline-success" %>
+<%=link_to '連絡掲示板', contact_path(@contact.id), class: "btn btn-outline-success" %>

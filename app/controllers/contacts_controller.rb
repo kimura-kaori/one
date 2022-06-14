@@ -11,7 +11,7 @@ class ContactsController < ApplicationController
   end
 
   def create
-    @contact = current_user.contacts.build(title: "コメントルーム")
+    @contact = current_user.contacts.build(title: "下記へご入力ください。")
 
     respond_to do |format|
       if @contact.save

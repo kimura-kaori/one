@@ -3,15 +3,5 @@ class Student < ApplicationRecord
   has_many :family_environments
   has_many :emergency_contacts
 
-  validates :student_furigana, presence: true
-  validates :student_name, presence: true
-  validates :sex, presence: true
-  validates :birthday, presence: true
-  validates :telephone, presence: true
-  validates :cellphone, presence: true
-  validates :post_code, presence: true
-  validates :address, presence: true
-  validates :parents_furigana, presence: true
-  validates :parents_name, presence: true
-  validates :relationship, presence: true
+  validates :student_furigana, :student_name, :sex, :birthday, :telephone, :cellphone,:post_code, :address, :parents_furigana, :parents_name, :relationship, presence: true
 end
