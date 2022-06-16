@@ -1,10 +1,10 @@
-<%= form_with(model: @student, local: true) do |form| %>
-  <% if @student.errors.any? %>
+<%= form_with(model:[:user, student], local: true) do |form| %>
+  <% if student.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@student.errors.count, "error") %> prohibited this student from being saved:</h2>
+      <h2><%= pluralize(student.errors.count, "error") %> prohibited this student from being saved:</h2>
 
       <ul>
-        <% @student.errors.full_messages.each do |message| %>
+        <% student.errors.full_messages.each do |message| %>
           <li><%= message %></li>
         <% end %>
       </ul>
@@ -63,7 +63,7 @@
         <label for="formGroupExampleInput2" class="form-label"><%= form.label :relationship, "relationship", class: "label" %></label>
         <input type="text_field" class="form-control" id="formGroupExampleInput2" placeholder=<%= form.text_field :relationship %>
 
-  <div class="actions">
-    <%= form.submit class: "button" ,class: "btn btn-outline-success"%>
-  </div>
-  <% end %>
+      <div class="actions">
+        <%= form.submit class: "button" ,class: "btn btn-outline-success"%>
+      </div>
+<% end %>

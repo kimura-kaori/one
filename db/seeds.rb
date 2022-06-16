@@ -5,21 +5,22 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+ActionMailer::Base.perform_deliveries = false
 
-User.create!(email: "adddmin@admin.com",
-             password: "111111",
-             password_confirmation: "111111",
-             admin: true)
-10.times do |n|
-  password = "password"
-  User.create!(email: "test#{n + 1}@test.com",
-               password: password,
-               password_confirmation: password,
-               admin: false,
-               )
-               user.skip_confirmation!
-               user.save!
-end
+# User.create!(email: "adddmin@admin.com",
+#              password: "111111",
+#              password_confirmation: "111111",
+#              admin: true)
+# 10.times do |n|
+#   User.create!(email: "test#{n + 1}@test.com",
+#                password: password,
+#                password_confirmation: password,
+#                admin: false,
+#                confirmed_at: Time.now
+#                )
+# end
+User.create(email: "sample@sample.com", password: "password", admin: false, confirmed_at: Time.now)
+User.create(email: "admin@example.com", password: "password", admin: true, confirmed_at: Time.now)
 # 10.times do |i|
 #   Student.create!(
 #     : "test#{i + 1}",

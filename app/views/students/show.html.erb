@@ -43,5 +43,5 @@
   <input type="text" class="form-control" id="formGroupExampleInput2" placeholder=<%= @student.relationship %>>
 </div>
 
-<%= link_to 'Edit', edit_student_path(@student)  ,class: "btn btn-outline-success"%>
-<%= link_to 'マイページ', mypage_students_path  ,class: "btn btn-outline-success"%>
+<%= link_to 'Edit', edit_user_student_path(@student)  ,class: "btn btn-outline-success"%>
+<%= link_to 'マイページ', user_path(current_user)  ,class: "btn btn-outline-success"%>

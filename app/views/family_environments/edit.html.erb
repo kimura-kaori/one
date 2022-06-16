@@ -2,5 +2,5 @@
 
 <%= render 'form', family_environment: @family_environment %>
 
-<%= link_to 'Show', student_family_environment_path(@student.id,@family_environment.id) ,class: "btn btn-outline-success" %>
-<%= link_to 'マイページ', mypage_students_path ,class: "btn btn-outline-success" %>
+<%= link_to 'Show', user_student_family_environment_path(@family_environment.id, student_id: @student.id, user_id: @user.id) ,class: "btn btn-outline-success" %>
+<%= link_to 'マイページ', user_path(current_user) ,class: "btn btn-outline-success" %>

@@ -19,5 +19,5 @@
   <input type="text" class="form-control" id="formGroupExampleInput" placeholder=<%=@family_environment.family %>>
 </div>
 
-<%= link_to 'Edit', edit_student_family_environment_path(@family_environment.student.id, @family_environment.id) ,class: "btn btn-outline-success" %> |
-<%= link_to 'マイページ', mypage_students_path ,class: "btn btn-outline-success" %>
+<%= link_to 'Edit', edit_user_student_family_environment_path(@family_environment.id, student_id: @student.id, user_id: @user.id) ,class: "btn btn-outline-success" %> |
+<%= link_to 'マイページ', user_path(current_user) ,class: "btn btn-outline-success" %>

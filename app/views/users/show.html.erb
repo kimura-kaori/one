@@ -1,0 +1,47 @@
+<p>【　提出期限：６月３０日（木）　】期日内提出のご協力の程お願い申し上げます。</p>
+<% if current_user.try(:admin?) %>
+  <%= link_to '管理画面', rails_admin_path ,class: "btn btn-outline-success"%>
+<% end %>
+<table class="table table-hover">
+  <% @students.each do |student| %>
+    <tr class="table-active">
+      <td colspan="2" class="table-active"><%= student.student_name %></td>
+    </tr>
+    <tr>
+      <th><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-file-person" viewBox="0 0 16 16">
+  <path d="M12 1a1 1 0 0 1 1 1v10.755S12 11 8 11s-5 1.755-5 1.755V2a1 1 0 0 1 1-1h8zM4 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H4z"/>
+  <path d="M8 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>  基本情報</th>
+      <td><%= link_to '詳細', user_student_path(student.id, user_id: @user.id) ,class: "btn btn-outline-success"%></td>
+    </tr>
+
+    <tr>
+    <tr>
+      <th><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-house-fill" viewBox="0 0 16 16">
+        <path fill-rule="evenodd" d="m8 3.293 6 6V13.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5V9.293l6-6zm5-.793V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z"/>
+        <path fill-rule="evenodd" d="M7.293 1.5a1 1 0 0 1 1.414 0l6.647 6.646a.5.5 0 0 1-.708.708L8 2.207 1.354 8.854a.5.5 0 1 1-.708-.708L7.293 1.5z"/>
+      </svg>  家庭環境調査</th>
+
+        <td><%= link_to '新規登録', new_user_student_family_environment_path(student_id: student.id, user_id: @user.id) ,class: "btn btn-outline-success" if student.family_environments.empty?%></td>
+        <td><%= link_to '詳細', user_student_family_environments_path(student_id: student.id, user_id: @user.id) ,class: "btn btn-outline-success" if student.family_environments.present?%></td>
+
+    </tr>
+    <tr>
+      <th><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-telephone-forward" viewBox="0 0 16 16">
+        <path d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.568 17.568 0 0 0 4.168 6.608 17.569 17.569 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.678.678 0 0 0-.58-.122l-2.19.547a1.745 1.745 0 0 1-1.657-.459L5.482 8.062a1.745 1.745 0 0 1-.46-1.657l.548-2.19a.678.678 0 0 0-.122-.58L3.654 1.328zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511zm10.762.135a.5.5 0 0 1 .708 0l2.5 2.5a.5.5 0 0 1 0 .708l-2.5 2.5a.5.5 0 0 1-.708-.708L14.293 4H9.5a.5.5 0 0 1 0-1h4.793l-1.647-1.646a.5.5 0 0 1 0-.708z"/>
+      </svg>  緊急連絡先</th>
+       <% if student.emergency_contacts.empty?%>
+        <td><%= link_to '新規登録', new_user_student_emergency_contact_path(student_id: student.id, user_id: @user.id),class: "btn btn-outline-success"%></td>
+       <% else %>
+        <td><%= link_to '詳細', user_student_emergency_contacts_path(student_id: student.id, user_id: @user.id) ,class: "btn btn-outline-success" %></td>
+       <% end %>
+    </tr>
+    <tr>
+      <td>全ての入力完了後、下記をクリックして下さい。<br><%= link_to '登録内容を学校へ通知', report_user_student_path(student.id, user_id: @user.id) ,class: "btn btn-sm btn-success text-white"%></td>
+    </tr>
+  <% end %>
+</table>
+  <div>新規生徒の登録は下記よりお手続きください。</div>
+  <%= link_to '基本情報登録', new_user_student_path(user_id: @user.id), class: "btn btn-outline-success" %>
+  <div>登録内容を変更いただいた場合は下記よりご連絡ください。</div>
+<%=link_to '連絡掲示板を作る', new_user_contact_path(user_id: @user.id), class: "btn btn-outline-success" unless @contact.present?%>
+<%=link_to '連絡掲示板をみる', user_contact_path(@contact.id, user_id: @user.id), class: "btn btn-outline-success" if @contact.present?%>

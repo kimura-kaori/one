@@ -20,5 +20,5 @@
       <% end %>
   </tbody>
 </table>
-<%= link_to 'マイページ', mypage_students_path %>
+<%= link_to 'マイページ', user_path(current_user) %>
 <%= link_to '新規生徒登録', new_student_path %>

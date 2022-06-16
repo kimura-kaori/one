@@ -1,14 +1,16 @@
 class StudentsController < ApplicationController
-  before_action :set_student, only: %i[ show edit update destroy ]
   before_action :authenticate_user!
   before_action :user_confirmation, only: %i[ show edit update destroy ]
 
   def index
     #ログインしているユーザーに紐づく生徒情報だけ表示.
+    @user = User.find(paramu[:user_id])
     @students = Student.includes(:user).where(user_id: current_user.id)
   end
 
   def show
+    @user = User.find(params[:user_id])
+    @student = Student.find(params[:id])
   end
 
   def new
@@ -16,32 +18,29 @@ class StudentsController < ApplicationController
   end
 
   def edit
+    @student = Student.find(params[:id])
+    @user = User.find(params[:user_id])
   end
 
   def create
+    @user = User.find(params[:user_id])
     @student = current_user.students.build(student_params)
 
-    respond_to do |format|
       if @student.save
-        format.html { redirect_to student_url(@student), notice: "Student was successfully created." }
-        format.json { render :show, status: :created, location: @student }
+        redirect_to user_student_path(@student.id, user_id: @user.id), notice: "Student was successfully created."
       else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @student.errors, status: :unprocessable_entity }
+        render :new
       end
-    end
   end
 
   def update
-    respond_to do |format|
+    @user = User.find(params[:user_id])
+    @student = Student.find(params[:id])
       if @student.update(student_params)
-        format.html { redirect_to student_url(@student), notice: "Student was successfully updated." }
-        format.json { render :show, status: :ok, location: @student }
+        redirect_to user_student_path(@student, user_id: @user.id), notice: "Student was successfully updated."
       else
-        format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @student.errors, status: :unprocessable_entity }
+        render :edit, status: :unprocessable_entity
       end
-    end
   end
 
   def destroy
@@ -63,18 +62,20 @@ class StudentsController < ApplicationController
   # end
 
   def report
+    @user = User.find(params[:user_id])
     @student = Student.find(params[:id])
     ReportMailer.send_message_to_school(@student).deliver
   end
 
+  # def keijiban_mail
+  #   @student = Student.find(params[:id])
+  #   ReportMailer.send_message_to_kejiban(@student).deliver
+  # end
+
   private
 
-    def set_student
-      @student = Student.find(params[:id])
-    end
-
     def student_params
-      params.require(:student).permit(:student_furigana, :student_name, :sex, :birthday, :telephone, :cellphone, :post_code, :address, :parents_furigana, :parents_name, :relationship)
+      params.require(:student).permit(:student_furigana, :student_name, :sex, :birthday, :telephone, :cellphone, :post_code, :address, :parents_furigana, :parents_name, :relationship, :user_id)
     end
 
     def user_confirmation

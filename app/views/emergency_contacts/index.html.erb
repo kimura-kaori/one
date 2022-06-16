@@ -19,8 +19,8 @@
         <td><%= emergency_contact.contact_address %></td>
         <td><%= emergency_contact.telephone %></td>
 
-        <td><%= link_to 'Show', student_emergency_contact_path(@student.id,emergency_contact.id) , class: "btn btn-outline-success"%></td>
-        <td><%= link_to 'Edit', edit_student_emergency_contact_path(@student.id,emergency_contact.id), class: "btn btn-outline-success" %></td>
+        <td><%= link_to 'Show', user_student_emergency_contact_path(emergency_contact.id, student_id: @student.id, user_id: @user.id), class: "btn btn-outline-success"%></td>
+        <td><%= link_to 'Edit', edit_user_student_emergency_contact_path(emergency_contact.id, student_id: @student.id, user_id: @user.id), class: "btn btn-outline-success" %></td>
       </tr>
     <% end %>
   </tbody>
@@ -28,4 +28,4 @@
 
 <br>
 
-<%= link_to 'New Emergency Contact', new_student_emergency_contact_path , class: "btn btn-outline-success"%>
+<%= link_to 'New Emergency Contact', new_user_student_emergency_contact_path , class: "btn btn-outline-success"%>
