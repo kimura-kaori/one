@@ -1,6 +1,7 @@
 class CommentsController < ApplicationController
   def create
     # Blogをパラメータの値から探し出し,Blogに紐づくcommentsとしてbuildします。
+    @user = current_user.id
     @contact = Contact.find(params[:contact_id])
     @comment = @contact.comments.build(comment_params)
     # クライアント要求に応じてフォーマットを変更
@@ -8,7 +9,7 @@ class CommentsController < ApplicationController
       if @comment.save
         format.js { render :index }
       else
-        format.html { redirect_to contact_path(@contact), notice: '投稿できませんでした...' }
+        format.html { redirect_to user_contact_path(@contact), notice: '投稿できませんでした...' }
       end
     end
   end
@@ -16,6 +17,6 @@ class CommentsController < ApplicationController
   private
 
   def comment_params
-    params.require(:comment).permit(:content)
+    params.require(:comment).permit(:content).merge(current_user.id)
   end
 end

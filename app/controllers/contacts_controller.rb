@@ -14,11 +14,11 @@ class ContactsController < ApplicationController
 
   def create
     @user = User.find(params[:user_id])
-    @contact = current_user.contacts.build(title: "下記へご入力ください。")
+    @contact = @user.contacts.build(title: "下記へご入力ください。")
 
     respond_to do |format|
       if @contact.save
-        format.html { redirect_to contact_url(@contact), notice: "Contact was successfully created." }
+        format.html { redirect_to user_contact_path(@contact, @user), notice: "Contact was successfully created." }
         format.json { render :show, status: :created, location: @contact }
       else
         format.html { render :new, status: :unprocessable_entity }

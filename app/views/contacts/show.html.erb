@@ -4,7 +4,7 @@
     <div class="contact-text">
       <p><strong>連絡ツール</strong>：<%= @contact.title %></p>
     </div>
-    
+
     <strong>【登録内容変更の場合】</strong>
     <p>お手数ですが、変更箇所を下記フォームにご入力後、メール送信をクリックしてください。</p>
     <p>連絡内容</p>
@@ -12,10 +12,10 @@
      <!-- このcomments_areaというHTMLのidを取得して、そのdivの部分だけを更新する -->
      <div id="comments_area">
        <!-- 投稿されたコメント一覧をブログの詳細ページに表示するためのrender -->
-       <%= render partial: 'comments/index', locals: { comments: @comments, contact: @contact } %>
+       <%= render partial: 'comments/index', locals: { comments: @comments, contact: @contact, user: @user } %>
      </div>
 
      <!-- コメント入力欄をブログの詳細ページに表示するためのrender -->
-     <%= render partial: 'comments/form', locals: { comment: @comment, contact: @contact } %>
+     <%= render partial: 'comments/form', locals: { comment: @comment, contact: @contact, user: @user } %>
 
    </div>
