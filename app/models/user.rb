@@ -5,4 +5,18 @@ class User < ApplicationRecord
   has_many :contacts
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable, :confirmable
+
+  def self.guest
+    find_or_create_by!(email: 'guest@example.com') do |user|
+    user.password = SecureRandom.urlsafe_base64
+    user.confirmed_at = Time.now
+    end
+  end
+  def self.admin_guest
+    find_or_create_by!(email: 'admin_guest@example.com') do |user|
+    user.password = SecureRandom.urlsafe_base64
+    user.confirmed_at = Time.now
+    user.update_attribute :admin, true
+    end
+  end
 end
