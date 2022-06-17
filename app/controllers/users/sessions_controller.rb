@@ -5,6 +5,7 @@ class Users::SessionsController < Devise::SessionsController
   def guest_sign_in
     user = User.guest
     sign_in user
+    user.update_attribute :admin, false
     redirect_to root_path, notice: 'ゲストユーザーとしてログインしました。'
   end
 
