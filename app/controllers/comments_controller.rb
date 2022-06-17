@@ -1,7 +1,7 @@
 class CommentsController < ApplicationController
   def create
     # Blogをパラメータの値から探し出し,Blogに紐づくcommentsとしてbuildします。
-    @user = current_user
+    @user = User.find(params[:user_id])
     @contact = Contact.find(params[:contact_id])
     @comment = @contact.comments.build(comment_params)
     # クライアント要求に応じてフォーマットを変更

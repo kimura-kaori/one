@@ -1,10 +1,11 @@
 class ContactsController < ApplicationController
-
+  
   def show
     @user = User.find(params[:user_id])
     @contact = Contact.find(params[:id])
     @comments = @contact.comments
     @comment = @contact.comments.build
+    redirect_to root_path unless @user == current_user || current_user.admin == true
   end
 
   def new

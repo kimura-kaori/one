@@ -54,27 +54,19 @@ class StudentsController < ApplicationController
     @students = Student.includes(:user).where(user_id: current_user.id)
   end
 
-  # def contact
-  #   @contact = Contact.find(params[:id])
-  #   @comments = @contact.comments
-  #   @comment = @contact.comments.build
-  #   end
-  # end
-
   def report
-    @user = User.find(params[:user_id])
-    @student = Student.find(params[:id])
-    #コンタクトルームを作成する。
-    #引数の一つとしてURLを送る。(http://localhost:3000/users/3/contacts/23)
-    ReportMailer.send_message_to_school(@student).deliver
-    #redirect_to マイページにもどす
+      @user = User.find(params[:user_id])
+      @student = Student.find(params[:id])
 
+      #コンタクトルームを作成する。
+      Contact.find_or_create_by!(title: 'ルーム作成', user_id: current_user.id)
+      # #引数の一つとしてURLを送る。(http://localhost:3000/users/3/contacts/23)
+      contact_room_url = "http://localhost:3000/users/#{current_user.id}/contacts/#{Contact.find_by(user_id: current_user.id).id}"
+      #メールアドレス、生徒名、保護者名を引数で渡して、受け取り側も設定してメールに引用できるようにする、
+      ReportMailer.send_message_to_school(contact_room_url).deliver
+      ReportMailer.welcome_email(current_user, contact_room_url).deliver
+      #redirect_to マイページにもどす
   end
-
-  # def keijiban_mail
-  #   @student = Student.find(params[:id])
-  #   ReportMailer.send_message_to_kejiban(@student).deliver
-  # end
 
   private
 
