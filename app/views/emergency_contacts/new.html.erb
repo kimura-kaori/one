@@ -2,4 +2,4 @@
 
 <%= render 'form', emergency_contact: @emergency_contact %>
 
-<%= link_to 'Back', user_student_emergency_contacts_path %>
+<%= link_to 'マイページ', user_path(current_user) ,class: "btn btn-outline-success"%>

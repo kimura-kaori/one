@@ -1,13 +1,14 @@
 class CommentsController < ApplicationController
   def create
     # Blogをパラメータの値から探し出し,Blogに紐づくcommentsとしてbuildします。
-    @user = current_user.id
+    @user = current_user
     @contact = Contact.find(params[:contact_id])
     @comment = @contact.comments.build(comment_params)
     # クライアント要求に応じてフォーマットを変更
     respond_to do |format|
       if @comment.save
         format.js { render :index }
+        #ここでメール送信のメソッドを呼ぶ？
       else
         format.html { redirect_to user_contact_path(@contact), notice: '投稿できませんでした...' }
       end

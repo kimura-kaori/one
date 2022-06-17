@@ -64,7 +64,11 @@ class StudentsController < ApplicationController
   def report
     @user = User.find(params[:user_id])
     @student = Student.find(params[:id])
+    #コンタクトルームを作成する。
+    #引数の一つとしてURLを送る。(http://localhost:3000/users/3/contacts/23)
     ReportMailer.send_message_to_school(@student).deliver
+    #redirect_to マイページにもどす
+
   end
 
   # def keijiban_mail
