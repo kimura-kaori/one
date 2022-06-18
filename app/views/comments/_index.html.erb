@@ -1,10 +1,18 @@
-<ul>
+<table class="table table-striped">
+  <tbody>
   <% comments.each do |comment| %>
-    <% if comment.id.present? %>
-      <li>
-        <p><%= comment.content %></p>
-        <p><%= comment.user.email %></p>
-      </li>
-    <% end %>
+    <tr>
+      <% if @student.present? %>
+        <td><%= @student.parents_name %></td>
+      <% else %>
+        <td>京都東中学校</td>
+      <% end %>
+    </tr>
+    <tr>
+      <% if comment.id.present? %>
+        <td><%= comment.content %></td>
+      <% end %>
+    </tr>
   <% end %>
-</ul>
+  </tbody>
+</table>
