@@ -1,3 +1,7 @@
+// $("#comments_area").html("<%= j(render 'comments/index', { student: @student, user: @user, comments: @comment.contact.comments, contact: @comment.contact }) %>");
+// $("textarea").val('');
+// $("#notice").html("<%= j flash[:notice] %>");
+
 $("#comments_area").html("<%= j(render 'comments/index', { user: @user, comments: @comment.contact.comments, contact: @comment.contact }) %>");
 $("textarea").val('');
 $("#notice").html("<%= j flash[:notice] %>");

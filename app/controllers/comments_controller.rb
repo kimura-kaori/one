@@ -2,10 +2,9 @@ class CommentsController < ApplicationController
 
   def create
     @user = User.find(params[:user_id])
-    # @student = Student.find(params[:id])
+    # @student = Student.find(params[:student_id])
     @contact = Contact.find(params[:contact_id])
     @comment = @contact.comments.build(comment_params)
-    # contact_room_url = "http://localhost:3000/users/#{current_user.id}/contacts/#{Contact.find_by(user_id: current_user.id).id}"
     # クライアント要求に応じてフォーマットを変更
     respond_to do |format|
       if @comment.save
