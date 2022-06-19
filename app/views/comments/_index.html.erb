@@ -3,9 +3,9 @@
   <% comments.each do |comment| %>
     <tr>
       <% if @user.students.first.parents_name.present? %>
-        <td><%= @user.students.first.parents_name %></td>
+        <td><%= @user.students.first.parents_name %>さん</td>
       <% else %>
-        <td>京都東中学校</td>
+        <td><%= 京都東中学校 %></td>
       <% end %>
     </tr>
     <tr>

@@ -11,7 +11,7 @@
 
   </head>
 <header>
-  <body style="padding-top: 5rem">
+  <body style="padding-top: 4rem">
     <% if flash[:notice] %>
       <div class="notification is-info">
         <p class="notice"><%= notice %></p>
@@ -56,9 +56,12 @@
     <%= yield %>
   </div>
 
-  <div id="footer" class="fixed-bottom" style="height:30px; font-color:white; background-color: #f8f9fa!important;">
-  </div>
-  <!-- <footer class="text-center p-2 bg-secondary ">Copyright ©</footer> -->
+  <footer class=" fixed-bottom bg-light text-center text-lg-start">
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+      © 2020 Copyright:
+      <a class="text-dark" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+    </div>
+  </footer>
 
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>

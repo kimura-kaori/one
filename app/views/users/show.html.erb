@@ -21,10 +21,11 @@
         <path fill-rule="evenodd" d="m8 3.293 6 6V13.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5V9.293l6-6zm5-.793V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z"/>
         <path fill-rule="evenodd" d="M7.293 1.5a1 1 0 0 1 1.414 0l6.647 6.646a.5.5 0 0 1-.708.708L8 2.207 1.354 8.854a.5.5 0 1 1-.708-.708L7.293 1.5z"/>
       </svg>  家庭環境調査</th>
-
-        <td><%= link_to '新規登録', new_user_student_family_environment_path(student_id: student.id, user_id: @user.id) ,class: "btn btn-outline-success" if student.family_environments.empty?%></td>
-        <td><%= link_to '詳細', user_student_family_environments_path(student_id: student.id, user_id: @user.id) ,class: "btn btn-outline-success" if student.family_environments.present?%></td>
-
+      <% if student.family_environments.empty? %>
+        <td><%= link_to '新規登録', new_user_student_family_environment_path(student_id: student.id, user_id: @user.id) ,class: "btn btn-outline-success" %></td>
+      <% else %>
+        <td><%= link_to '詳細', user_student_family_environments_path(student_id: student.id, user_id: @user.id) ,class: "btn btn-outline-success" %></td>
+      <% end %>
     </tr>
     <tr>
       <th><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-telephone-forward" viewBox="0 0 16 16">
@@ -41,11 +42,33 @@
     </tr>
   <% end %>
 </table>
-<% unless current_user.try(:admin?) %>
-  <div>新規生徒の登録は下記よりお手続きください。</div>
-    <%= link_to '基本情報登録', new_user_student_path(user_id: @user.id), class: "btn btn-outline-success" %>
-<% end %>
-<%if @contact.present?%>
-  <div>ご登録内容を変更いただいた場合は、下記よりご連絡ください。</div>
-    <%=link_to '連絡欄', user_contact_path(@contact.id, user_id: @user.id), class: "btn btn-outline-success" if @contact.present?%>
-<% end %>
+
+<footer class=" fixed-bottom bg-light text-center text-lg-start">
+  <div class="container p-4">
+    <div class="row">
+      <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
+        <h5 class="text-uppercase">New student registration</h5>
+        <p>
+          新規生徒の登録は下記よりお手続きください。
+        </p>
+        <% unless current_user.try(:admin?) %>
+          <%= link_to '基本情報登録', new_user_student_path(user_id: @user.id), class: "btn btn-outline-success" %>
+        <% end %>
+      </div>
+      <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
+        <h5 class="text-uppercase">Contact</h5>
+        <p>
+          ご登録内容を変更いただいた場合は、下記よりご連絡ください。
+        </p>
+        <% if @contact.present?%>
+          <%=link_to '連絡欄', user_contact_path(@contact.id, user_id: @user.id), class: "btn btn-outline-success" if @contact.present?%>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+  <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+    © 2020 Copyright:
+    <a class="text-dark" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+  </div>
+</footer>
