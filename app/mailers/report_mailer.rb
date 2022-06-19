@@ -12,4 +12,15 @@ class ReportMailer < ApplicationMailer
     @student = student
     mail to: @user.email, subject: '（京都東中学校）ご登録ありがとうございました。【One】'
   end
+
+  def notice_comment(user) #学校宛
+    # @contact_room_url = contact_room_url
+    @user = user
+    mail to: ENV["SCHOOL"], subject: '連絡欄へ投稿がありました。【One】'
+  end
+
+  def alert_comment(user)#保護者宛
+    @user = user
+    mail to: @user.email, subject: '（京都東中学校）連絡欄へ投稿がありました。【One】'
+  end
 end

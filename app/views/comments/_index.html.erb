@@ -2,8 +2,8 @@
   <tbody>
   <% comments.each do |comment| %>
     <tr>
-      <% if @student.present? %>
-        <td><%= @student.parents_name %></td>
+      <% if @user.students.first.parents_name.present? %>
+        <td><%= @user.students.first.parents_name %></td>
       <% else %>
         <td>京都東中学校</td>
       <% end %>

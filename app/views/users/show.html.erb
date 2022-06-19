@@ -1,7 +1,7 @@
 <p>【　提出期限：６月３０日（木）　】期日内提出のご協力の程お願い申し上げます。</p>
 <% if current_user.try(:admin?) %>
   <%= link_to '管理画面', rails_admin_path ,class: "btn btn-outline-success"%>
-  <%= link_to 'コメントルーム', rails_admin_path ,class: "btn btn-outline-success"%>
+  <%= link_to '連絡欄', rails_admin_path ,class: "btn btn-outline-success"%>
 <% end %>
 <table class="table table-hover">
   <% @students.each do |student| %>
@@ -37,11 +37,15 @@
        <% end %>
     </tr>
     <tr>
-      <td>全ての入力完了後、下記をクリックして下さい。<br><%= link_to '登録内容を学校へ通知', report_user_student_path(student.id, user_id: @user.id) ,class: "btn btn-sm btn-success text-white"%></td>
+      <td>全ての入力完了後、下記をクリックしてください。<br><%= link_to '新規登録通知', report_user_student_path(student.id, user_id: @user.id) ,class: "btn btn-sm btn-success text-white"%></td>
     </tr>
   <% end %>
 </table>
+<% unless current_user.try(:admin?) %>
   <div>新規生徒の登録は下記よりお手続きください。</div>
-  <%= link_to '基本情報登録', new_user_student_path(user_id: @user.id), class: "btn btn-outline-success" %>
+    <%= link_to '基本情報登録', new_user_student_path(user_id: @user.id), class: "btn btn-outline-success" %>
+<% end %>
+<%if @contact.present?%>
   <div>ご登録内容を変更いただいた場合は、下記よりご連絡ください。</div>
-<%=link_to '変更内容を学校へ通知', user_contact_path(@contact.id, user_id: @user.id), class: "btn btn-outline-success" if @contact.present?%>
+    <%=link_to '連絡欄', user_contact_path(@contact.id, user_id: @user.id), class: "btn btn-outline-success" if @contact.present?%>
+<% end %>
