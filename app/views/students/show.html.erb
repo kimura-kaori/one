@@ -1,3 +1,4 @@
+<div class=container>
 <div class="mb-3">
   <label for="formGroupExampleInput" class="form-label">生徒名（ふりがな）</label>
   <input type="text" class="form-control" id="formGroupExampleInput" placeholder=<%= @student.student_furigana %>>
@@ -41,7 +42,8 @@
 <div class="mb-3">
   <label for="formGroupExampleInput2" class="form-label">続柄</label>
   <input type="text" class="form-control" id="formGroupExampleInput2" placeholder=<%= @student.relationship %>>
-</div>
 
+</div>
 <%= link_to 'Edit', edit_user_student_path(@student)  ,class: "btn btn-outline-success"%>
 <%= link_to 'マイページ', user_path(current_user)  ,class: "btn btn-outline-success"%>
+</div>

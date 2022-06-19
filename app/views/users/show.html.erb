@@ -1,8 +1,16 @@
+<!-- <style>
+  .footer{
+  position: absolute;
+  bottom: 0;
+  }
+</style> -->
+<div class="container">
 <p>【　提出期限：６月３０日（木）　】期日内提出のご協力の程お願い申し上げます。</p>
 <% if current_user.try(:admin?) %>
   <%= link_to '管理画面', rails_admin_path ,class: "btn btn-outline-success"%>
   <%= link_to '連絡欄', rails_admin_path ,class: "btn btn-outline-success"%>
 <% end %>
+<div class="container">
 <table class="table table-hover">
   <% @students.each do |student| %>
     <tr class="table-active">
@@ -42,8 +50,9 @@
     </tr>
   <% end %>
 </table>
-
-<footer class=" fixed-bottom bg-light text-center text-lg-start">
+</div>
+</div>
+<footer class="bg-light text-center text-lg-start">
   <div class="container p-4">
     <div class="row">
       <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
@@ -65,9 +74,5 @@
         <% end %>
       </div>
     </div>
-  </div>
-  <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-    © 2020 Copyright:
-    <a class="text-dark" href="https://mdbootstrap.com/">MDBootstrap.com</a>
   </div>
 </footer>
