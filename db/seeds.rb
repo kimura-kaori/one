@@ -7,11 +7,9 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 # ActionMailer::Base.perform_deliveries = false
 #
-10.times do |n|
-  email = Faker::Internet.email
-  password = "111111"
-  User.create!(email: email,
-               password: password,
+4.times do |n|
+  User.create!(email: "test#{n + 1}@test.com",
+               password: 111111,
                admin: false,
                confirmed_at: Time.now
                )
@@ -29,7 +27,8 @@ Student.create!(student_furigana: 'ひの あやみ',
                 parents_furigana: 'ひのかよこ',
                 parents_name: '日野香代子',
                 relationship: '母',
-                user_id: 1)
+                user_id: User.find_by(email: 'test1@test.com').id
+                )
 Student.create!(student_furigana: 'ひのとおる',
                 student_name: '日野透',
                 sex: '男',
@@ -41,7 +40,8 @@ Student.create!(student_furigana: 'ひのとおる',
                 parents_furigana: 'ひのかよこ',
                 parents_name: '日野香代子',
                 relationship: '母',
-                user_id: 1)
+                user_id: User.find_by(email: 'test1@test.com').id
+                )
 Student.create!(student_furigana: 'おくのひさの',
                 student_name: '奥野久乃',
                 sex: '女',
@@ -50,10 +50,11 @@ Student.create!(student_furigana: 'おくのひさの',
                 cellphone: '090-1234-5432',
                 post_code: '600-0000',
                 address: '京都府京都市中京区落合5-68',
-                parents_furigana: 'おくのたくや',
-                parents_name: '奥野拓也',
-                relationship: '父',
-                user_id: 2)
+                parents_furigana: 'おくのあけみ',
+                parents_name: '奥野明美',
+                relationship: '母',
+                user_id: User.find_by(email: 'test2@test.com').id
+                )
 Student.create!(student_furigana: 'しまむらそうすけ',
                 student_name: '島村宗介',
                 sex: '男',
@@ -65,67 +66,8 @@ Student.create!(student_furigana: 'しまむらそうすけ',
                 parents_furigana: 'しまむらただし',
                 parents_name: '島村正',
                 relationship: '父',
-                user_id: 3)
-Student.create!(student_furigana: 'ふくしまゆうき',
-                student_name: '福島勇気',
-                sex: '男',
-                birthday: '2011年12月11日',
-                telephone: '075-123-1234',
-                cellphone: '090-5432-6789',
-                post_code: '600-0000',
-                address: '京都府京都市中京区日高町太田9-12',
-                parents_furigana: 'ふくしまのぶゆき',
-                parents_name: '福島信幸',
-                relationship: '父',
-                user_id: 4)
-Student.create!(student_furigana: 'はやかわしんじ',
-                student_name: '早川慎二',
-                sex: '男',
-                birthday: '2011年8月11日',
-                telephone: '075-985-1234',
-                cellphone: '090-358-6789',
-                post_code: '600-0000',
-                address: '京都府京都市中京区日高町太田5-6',
-                parents_furigana: 'はやかわたろう',
-                parents_name: '早川太郎',
-                relationship: '父',
-                user_id: 5)
-Student.create!(student_furigana: 'はやかわさき',
-                student_name: '早川咲',
-                sex: '女',
-                birthday: '2004年12月11日',
-                telephone: '075-985-1234',
-                cellphone: '090-358-6789',
-                post_code: '600-0000',
-                address: '京都府京都市中京区日高町太田5-6',
-                parents_furigana: 'はやかわたろう',
-                parents_name: '早川太郎',
-                relationship: '父',
-                user_id: 5)
-Student.create!(student_furigana: 'はやかわそう',
-                student_name: '早川奏',
-                sex: '男',
-                birthday: '2005年10月1日',
-                telephone: '075-985-1234',
-                cellphone: '090-358-6789',
-                post_code: '600-0000',
-                address: '京都府京都市中京区日高町太田5-6',
-                parents_furigana: 'はやかわたろう',
-                parents_name: '早川太郎',
-                relationship: '父',
-                user_id: 5)
-Student.create!(student_furigana: 'おがたもとよ',
-                student_name: '尾形素美',
-                sex: '女',
-                birthday: '2011年3月19日',
-                telephone: '075-358-1234',
-                cellphone: '090-853-6789',
-                post_code: '600-0000',
-                address: '京都府京都市中京区上勝町1445',
-                parents_furigana: 'おがたあきひろ',
-                parents_name: '尾形明宏',
-                relationship: '父',
-                user_id: 6)
+                user_id: User.find_by(email: 'test3@test.com').id
+                )
 Student.create!(student_furigana: 'たかぞのれい',
                 student_name: '高園怜',
                 sex: '女',
@@ -137,7 +79,8 @@ Student.create!(student_furigana: 'たかぞのれい',
                 parents_furigana: 'たかぞのよしき',
                 parents_name: '高園芳樹',
                 relationship: '父',
-                user_id: 7)
+                user_id: User.find_by(email: 'test4@test.com').id
+                )
 Student.create!(student_furigana: 'たかぞのなぎさ',
                 student_name: '高園渚',
                 sex: '男',
@@ -149,41 +92,167 @@ Student.create!(student_furigana: 'たかぞのなぎさ',
                 parents_furigana: 'たかぞのよしき',
                 parents_name: '高園芳樹',
                 relationship: '父',
-                user_id: 7)
+                user_id: User.find_by(email: 'test4@test.com').id
+                )
 
-10.times do |n|
-  name = Gimei.kanji
-  birthday = Faker::Date.between(from: '1959-1-1', to: '2001-12-31')
-  FamilyEnvironment.create!(relationship: '祖母',
-                             name: name,
-                             birthday: birthday,
-                             age: n + 60,
-                             family: "兄",
-                             student_id: Student.find(n+1).id,
-                             )
-end
+FamilyEnvironment.create!(relationship: '父',
+                          name: '日野輝',
+                          birthday: Faker::Date.between(from: '1959-1-1', to: '2001-12-31'),
+                          age: 38,
+                          family: "会社員",
+                          student_id: 1,
+                        )
+FamilyEnvironment.create!(relationship: '母',
+                          name: '日野香代子',
+                          birthday: Faker::Date.between(from: '1959-1-1', to: '2001-12-31'),
+                          age: 38,
+                          family: "会社員",
+                          student_id: 1,
+                        )
+FamilyEnvironment.create!(relationship: '本人',
+                          name: '日野彩美',
+                          birthday: Faker::Date.between(from: '1959-1-1', to: '2001-12-31'),
+                          age: 12,
+                          family: "6年2組",
+                          student_id: 1,
+                        )
+FamilyEnvironment.create!(relationship: '弟',
+                          name: '日野透',
+                          birthday: Faker::Date.between(from: '1959-1-1', to: '2001-12-31'),
+                          age: 9,
+                          family: "3年2組",
+                          student_id: 1,
+                        )
+FamilyEnvironment.create!(relationship: '父',
+                          name: '日野輝',
+                          birthday: Faker::Date.between(from: '1959-1-1', to: '2001-12-31'),
+                          age: 38,
+                          family: "会社員",
+                          student_id: 2,
+                        )
+FamilyEnvironment.create!(relationship: '母',
+                          name: '日野香代子',
+                          birthday: Faker::Date.between(from: '1959-1-1', to: '2001-12-31'),
+                          age: 38,
+                          family: "会社員",
+                          student_id: 2,
+                        )
+FamilyEnvironment.create!(relationship: '本人',
+                          name: '日野彩美',
+                          birthday: Faker::Date.between(from: '1959-1-1', to: '2001-12-31'),
+                          age: 12,
+                          family: "6年2組",
+                          student_id: 2,
+                        )
+FamilyEnvironment.create!(relationship: '弟',
+                          name: '日野透',
+                          birthday: Faker::Date.between(from: '1959-1-1', to: '2001-12-31'),
+                          age: 9,
+                          family: "3年2組",
+                          student_id: 2,
+                        )
+FamilyEnvironment.create!(relationship: '母',
+                          name: '奥野明美',
+                          birthday: Faker::Date.between(from: '1959-1-1', to: '2001-12-31'),
+                          age: 35,
+                          family: "会社員",
+                          student_id: 3,
+                        )
+FamilyEnvironment.create!(relationship: '本人',
+                          name: '奥野久乃',
+                          birthday: Faker::Date.between(from: '1959-1-1', to: '2001-12-31'),
+                          age: 9,
+                          family: "3年2組",
+                          student_id: 3,
+                          )
+FamilyEnvironment.create!(relationship: '父',
+                          name: '島村俊樹',
+                          birthday: Faker::Date.between(from: '2011-1-1', to: '2001-12-31'),
+                          age: 45,
+                          family: "会社員",
+                          student_id: 4,
+                          )
+FamilyEnvironment.create!(relationship: '本人',
+                          name: '島村宗介',
+                          birthday: Faker::Date.between(from: '2011-1-1', to: '2001-12-31'),
+                          age: 12,
+                          family: "6年2組",
+                          student_id: 4,
+                          )
+FamilyEnvironment.create!(relationship: '父',
+                          name: '高園芳樹',
+                          birthday: Faker::Date.between(from: '2011-1-1', to: '2001-12-31'),
+                          age: 42,
+                          family: "会社員",
+                          student_id: 5,
+                          )
+FamilyEnvironment.create!(relationship: '本人',
+                          name: '高園怜',
+                          birthday: Faker::Date.between(from: '2011-1-1', to: '2001-12-31'),
+                          age: 12,
+                          family: "6年2組",
+                          student_id: 5,
+                          )
+FamilyEnvironment.create!(relationship: '兄',
+                          name: '高園渚',
+                          birthday: Faker::Date.between(from: '2011-1-1', to: '2001-12-31'),
+                          age: 12,
+                          family: "DIC高校1年1組",
+                          student_id: 5,
+                          )
 
-10.times do |n|
-  name = Gimei.name.kanji
-  telephone = '0'+ Faker::Lorem.characters(number: 10, min_numeric: 10)
-  birthday = Faker::Date.between(from: '1959-1-1', to: '2001-12-31')
-  EmergencyContact.create!(name: name,
-                           relationship: '祖母',
-                           contact_address: birthday,
-                           telephone: telephone,
-                           student_id: Student.find(n+1).id,
+EmergencyContact.create!(name: '日野輝',
+                           relationship: '父',
+                           contact_address: 'DIC株式会社',
+                           telephone: 09000000000,
+                           student_id: 1,
                            )
-end
-#
-10.times do |n|
-  Contact.create!(title: "test#{n + 1}",
-                  user_id: User.find(n+1).id,
-                  )
-end
+EmergencyContact.create!(name: '日野文',
+                          relationship: '祖母',
+                          contact_address: '祖母宅',
+                          telephone: 09000000000,
+                          student_id: 1,
+                          )
+EmergencyContact.create!(name: '日野輝',
+                           relationship: '父',
+                           contact_address: 'DIC株式会社',
+                           telephone: 09000000000,
+                           student_id: 2,
+                           )
+EmergencyContact.create!(name: '日野文',
+                          relationship: '祖母',
+                          contact_address: '祖母宅',
+                          telephone: 09000000000,
+                          student_id: 2,
+                          )
 
-10.times do |n|
-  Comment.create!(content: "sample#{n + 1}",
-                  user_id: User.find(n+1).id,
-                  contact_id: Contact.find(n+1).id,
-                  )
-end
+EmergencyContact.create!(name: '奥野明美',
+                          relationship: '母',
+                          contact_address: 'SC株式会社',
+                          telephone: 07500000000,
+                          student_id: 3,
+                          )
+EmergencyContact.create!(name: '島村俊樹',
+                          relationship: '父',
+                          contact_address: '株式会社DIV',
+                          telephone: 07500000000,
+                          student_id: 4,
+                          )
+EmergencyContact.create!(name: '高園芳樹',
+                          relationship: '父',
+                          contact_address: '有限会社hoge',
+                          telephone: 07500000000,
+                          student_id: 5,
+                          )
+# 5.times do |n|
+#   Contact.create!(title: "test#{n + 1}",
+#                   user_id: User.find(n+1).id,
+#                   )
+# end
+
+# 5.times do |n|
+#   Comment.create!(content: "sample#{n + 1}",
+#                   user_id: User.find(n+1).id,
+#                   contact_id: Contact.find(n+1).id,
+#                   )
+# end
