@@ -57,8 +57,10 @@ class StudentsController < ApplicationController
   def report
     @user = User.find(params[:user_id])
     @student = Student.find(params[:id])
-    Contact.find_or_create_by!(title: 'ルーム作成', user_id: current_user.id)
-    contact_room_url = "http://localhost:3000/users/#{current_user.id}/contacts/#{Contact.find_by(user_id: current_user.id).id}"
+    Contact.find_or_create_by!(title: 'ルーム作成', user_id: current_user.id)#ここで作成したコンタクトルームを呼べない、nillになる
+    # contact_room_url = request.headers[:referer]#これだとマイページにとぶ
+    # contact_room_url = user_contact_path(@contact.id, user_id: current_user.id)
+    contact_room_url = "#{request.base_url}/users/#{current_user.id}/contacts/#{Contact.find_by(user_id: current_user.id).id}"
     ReportMailer.send_message_to_school(contact_room_url, @current_user, @student).deliver
     ReportMailer.welcome_email(contact_room_url, @current_user, @student).deliver
     redirect_to user_path(current_user), notice: "お手続きありがとうございました。通知が完了しました。"

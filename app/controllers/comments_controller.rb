@@ -4,12 +4,17 @@ class CommentsController < ApplicationController
     @user = User.find(params[:user_id])
     @contact = Contact.find(params[:contact_id])
     @comment = @contact.comments.build(comment_params)
-    @contact_room_url = "http://localhost:3000/users/#{current_user.id}/contacts/#{Contact.find_by(user_id: current_user.id).id}"
+    url = request.headers[:referer]
     respond_to do |format|
-      if @comment.save
+      #コメントの相手にメールが飛ぶ条件分岐をしたい
+      if current_user.try(:admin?)
+        @comment.save
         format.js { render :index }
-        ReportMailer.notice_comment(current_user).deliver
-        ReportMailer.alert_comment(current_user).deliver
+        ReportMailer.alert_comment(current_user, url).deliver #投稿者が保護者なら学校へ
+      elsif
+        @comment.save
+        format.js { render :index }
+        ReportMailer.notice_comment(current_user, url).deliver #投稿者が学校なら保護者へ
       else
         format.html { redirect_to user_contact_path(@contact), notice: '投稿できませんでした...' }
       end

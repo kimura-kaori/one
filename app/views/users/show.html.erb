@@ -8,7 +8,6 @@
 <p>【　提出期限：６月３０日（木）　】期日内提出のご協力の程お願い申し上げます。</p>
 <% if current_user.try(:admin?) %>
   <%= link_to '管理画面', rails_admin_path ,class: "btn btn-outline-success"%>
-  <%= link_to '連絡欄', rails_admin_path ,class: "btn btn-outline-success"%>
 <% end %>
 <div class="container">
 <table class="table table-hover">
@@ -66,11 +65,13 @@
       </div>
       <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
         <h5 class="text-uppercase">Contact</h5>
-        <p>
-          ご登録内容を変更いただいた場合は、下記よりご連絡ください。
-        </p>
+        <p>京都市立東中学校
+        <br>〒600-0000
+        京都市中京区大分通飲都上ル河戸町123-1
+        <br>TEL：075-123-4567
+        <br>E-mail： kyotohigashi-c@city.kyoto.jp</p>
         <% if @contact.present?%>
-          <%=link_to '連絡欄', user_contact_path(@contact.id, user_id: @user.id), class: "btn btn-outline-success" if @contact.present?%>
+          <p>ご登録内容を変更いただいた場合は、<%=link_to '連絡欄', user_contact_path(@contact.id, user_id: @user.id) %>よりご連絡ください。</p>
         <% end %>
       </div>
     </div>

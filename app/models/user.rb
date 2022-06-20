@@ -11,7 +11,7 @@ class User < ApplicationRecord
     find_or_create_by!(email: 'guest@example.com') do |user|
     user.password = SecureRandom.urlsafe_base64
     user.confirmed_at = Time.now
-    user.update_attribute :admin, false
+    # user.update_attribute :admin, false
     end
   end
 
@@ -19,7 +19,7 @@ class User < ApplicationRecord
     find_or_create_by!(email: 'admin_guest@example.com') do |user|
     user.password = SecureRandom.urlsafe_base64
     user.confirmed_at = Time.now
-    user.update_attribute :admin, true
+    user.admin = true
     end
   end
 end

@@ -1,13 +1,13 @@
+
 <table class="table table-striped">
   <tbody>
   <% comments.each do |comment| %>
     <tr>
-      <% if @user.students.first.parents_name.present? %>
-        <td><%= @user.students.first.parents_name %>さん</td>
-      <% else %>
-        <td><%= 京都東中学校 %></td>
+      <% if comment.user.try(:admin?) %>
+        <td>学校</td>
+      <% else%>
+        <td><%= comment.user.students.first.parents_name %></td>
       <% end %>
-    </tr>
     <tr>
       <% if comment.id.present? %>
         <td><%= comment.content %></td>
