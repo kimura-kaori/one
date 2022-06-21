@@ -1,11 +1,11 @@
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
-  config.action_mailer.default_url_options = { host: 'salty-peak-31494.herokuapp.com'}
+  # config.action_mailer.default_url_options = { host: 'salty-peak-31494.herokuapp.com'}
   # config.action_mailer.delivery_method = :letter_opener_web
   # Code is not reloaded between requests.
   config.cache_classes = true
   config.action_mailer.delivery_method = :smtp
-  config.action_mailer.default_url_options = { host: 'salty-peak-31494.herokuapp.com' }
+  config.action_mailer.default_url_options = { host: 'frozen-tundra-71534.herokuapp.com' }
   ActionMailer::Base.delivery_method = :smtp
   ActionMailer::Base.smtp_settings = {
     user_name: ENV['SENDGRID_USERNAME'],
