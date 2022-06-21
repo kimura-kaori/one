@@ -56,15 +56,6 @@ ActiveRecord::Schema.define(version: 2022_06_14_025205) do
     t.index ["student_id"], name: "index_family_environments_on_student_id"
   end
 
-  create_table "student_family_environments", force: :cascade do |t|
-    t.bigint "student_id"
-    t.bigint "family_environment_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["family_environment_id"], name: "index_student_family_environments_on_family_environment_id"
-    t.index ["student_id"], name: "index_student_family_environments_on_student_id"
-  end
-
   create_table "students", force: :cascade do |t|
     t.string "student_furigana"
     t.string "student_name"
@@ -111,7 +102,5 @@ ActiveRecord::Schema.define(version: 2022_06_14_025205) do
   add_foreign_key "contacts", "users"
   add_foreign_key "emergency_contacts", "students"
   add_foreign_key "family_environments", "students"
-  add_foreign_key "student_family_environments", "family_environments"
-  add_foreign_key "student_family_environments", "students"
   add_foreign_key "students", "users"
 end
