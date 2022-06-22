@@ -18,6 +18,7 @@ gem 'cancancan'
 gem 'faker'
 gem 'gimei'
 gem 'letter_opener_web'
+gem 'seed-fu'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
