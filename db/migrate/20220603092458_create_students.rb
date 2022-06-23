@@ -4,7 +4,7 @@ class CreateStudents < ActiveRecord::Migration[6.0]
       t.string :student_furigana
       t.string :student_name
       t.string :sex
-      t.string :birthday
+      t.date :birthday
       t.string :telephone
       t.string :cellphone
       t.string :post_code

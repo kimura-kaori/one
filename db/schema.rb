@@ -47,8 +47,8 @@ ActiveRecord::Schema.define(version: 2022_06_14_025205) do
   create_table "family_environments", force: :cascade do |t|
     t.string "relationship"
     t.string "name"
-    t.string "birthday"
-    t.string "age"
+    t.date "birthday"
+    t.integer "age"
     t.string "family"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -60,7 +60,7 @@ ActiveRecord::Schema.define(version: 2022_06_14_025205) do
     t.string "student_furigana"
     t.string "student_name"
     t.string "sex"
-    t.string "birthday"
+    t.date "birthday"
     t.string "telephone"
     t.string "cellphone"
     t.string "post_code"
