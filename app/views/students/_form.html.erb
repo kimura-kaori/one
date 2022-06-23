@@ -34,8 +34,16 @@
 
       <div class="column is-6">
         <label for="formGroupExampleInput2" class="form-label"><%= form.label :birthday, "birthday", class: "label" %></label>
-        <input type="text_field" placeholder="2010年1月1日" class="form-control" id="formGroupExampleInput2" placeholder=<%= form.text_field :birthday %>
-
+      <div class="birth_date_field">
+      <%= raw sprintf(
+                form.date_select(
+                  :birthday,
+                  use_month_numbers: true,
+                  start_year: 1930,
+                  end_year: (Time.now.year - 5),
+                  default: Date.new(1989, 1, 1),
+                  date_separator: '%s'),
+                '年 ', '月 ') + '日' %>
 
       <div class="column is-6">
         <label for="formGroupExampleInput2" class="form-label"><%= form.label :telephone, "telephone", class: "label" %></label>
@@ -44,9 +52,11 @@
       <div class="column is-6">
         <label for="formGroupExampleInput2" class="form-label"><%= form.label :cellphone, "cellphone", class: "label" %></label>
         <input type="text_field" placeholder="090-000-0000" class="form-control" id="formGroupExampleInput2" placeholder=<%= form.text_field :cellphone %>
+
       <div class="column is-6">
         <label for="formGroupExampleInput2" class="form-label"><%= form.label :post_code, "post_code", class: "label" %></label>
         <input type="text_field" placeholder="000-0000" class="form-control" id="formGroupExampleInput2" placeholder=<%= form.text_field :post_code %>
+
       <div class="column is-6">
         <label for="formGroupExampleInput2" class="form-label"><%= form.label :address, "address", class: "label" %></label>
         <input type="text_field" placeholder="京都府京都市中京区御所南1234" class="form-control" id="formGroupExampleInput2" placeholder=<%= form.text_field :address %>
