@@ -1,6 +1,7 @@
-<h1>Editing Family Environment</h1>
+<h3>家庭環境調査</h3>
+
 
 <%= render 'form', family_environment: @family_environment %>
 
-<%= link_to 'Show', user_student_family_environment_path(@family_environment.id, student_id: @student.id, user_id: @user.id) ,class: "btn btn-outline-success" %>
+<%= link_to '詳細', user_student_family_environment_path(@family_environment.id, student_id: @student.id, user_id: @user.id) ,class: "btn btn-outline-success" %>
 <%= link_to 'マイページ', user_path(current_user) ,class: "btn btn-outline-success" %>

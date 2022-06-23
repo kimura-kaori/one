@@ -2,5 +2,5 @@
 
 <%= render 'form', student: @student %>
 
-<%= link_to 'Show', user_student_path(@student, user_id: @user.id) ,class: "btn btn-outline-success"%> |
+<%= link_to '詳細', user_student_path(@student, user_id: @user.id) ,class: "btn btn-outline-success"%> |
 <%= link_to 'マイページ', user_path(current_user) ,class: "btn btn-outline-success"%>

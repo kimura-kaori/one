@@ -1,13 +1,13 @@
-<h1>Family Environments</h1>
+<h3>家庭環境調査</h3>
 
 <table class="table table-hover">
   <thead>
     <tr>
-      <th>Relationship</th>
-      <th>Name</th>
-      <th>Birthday</th>
-      <th>Age</th>
-      <th>Family</th>
+      <th>続柄</th>
+      <th>氏名</th>
+      <th>生年月日</th>
+      <th>年齢</th>
+      <th>兄弟姉妹の校園名・学年・組/保護者・同居人の職業会社員</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -20,8 +20,8 @@
         <td><%= family_environment.birthday %></td>
         <td><%= family_environment.age %></td>
         <td><%= family_environment.family %></td>
-        <td><%= link_to 'Show', user_student_family_environment_path(family_environment.id, student_id: @student.id,user_id: @user.id), class: "btn btn-outline-success"%></td>
-        <td><%= link_to 'Edit', edit_user_student_family_environment_path(family_environment.id, student_id: @student.id,user_id: @user.id), class: "btn btn-outline-success" %></td>
+        <td><%= link_to '詳細', user_student_family_environment_path(family_environment.id, student_id: @student.id,user_id: @user.id), class: "btn btn-outline-success"%></td>
+        <td><%= link_to '編集', edit_user_student_family_environment_path(family_environment.id, student_id: @student.id,user_id: @user.id), class: "btn btn-outline-success" %></td>
       </tr>
     <% end %>
   </tbody>
@@ -29,4 +29,4 @@
 
 <br>
 
-<%= link_to 'New Family Environment', new_user_student_family_environment_path, class: "btn btn-outline-success" %>
+<%= link_to '新規登録', new_user_student_family_environment_path, class: "btn btn-outline-success" %>

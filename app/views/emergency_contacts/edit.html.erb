@@ -2,5 +2,5 @@
 
 <%= render 'form', emergency_contact: @emergency_contact %>
 
-<%= link_to 'Show', user_student_emergency_contact_path(@emergency_contact.id, student_id: @student.id, user_id: @user.id), class: "btn btn-outline-success"  %>
+<%= link_to '詳細', user_student_emergency_contact_path(@emergency_contact.id, student_id: @student.id, user_id: @user.id), class: "btn btn-outline-success"  %>
 <%= link_to 'マイページ', user_path(current_user), class: "btn btn-outline-success" %>
