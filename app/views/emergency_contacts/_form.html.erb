@@ -1,8 +1,7 @@
 <%= form_with(model: @emergency_contact, url:choice_new_or_edit,local: true) do |form| %>
   <% if @emergency_contact.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@emergency_contact.errors.count, "error") %> prohibited this emergency_contact from being saved:</h2>
-
+      <p class="error"><%= @emergency_contact.errors.count %>件のエラーがあります。</p>
       <ul>
         <% @emergency_contact.errors.full_messages.each do |message| %>
           <li><%= message %></li>

@@ -1,7 +1,7 @@
 <%= form_with(model: family_environment, url:choose_new_or_edit,local: true) do |form| %>
   <% if family_environment.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(family_environment.errors.count, "error") %> prohibited this family_environment from being saved:</h2>
+      <p class="error"><%= family_environment.errors.count %>件のエラーがあります。</p>
 
       <ul>
         <% family_environment.errors.full_messages.each do |message| %>
