@@ -20,14 +20,22 @@
          <label for="formGroupExampleInput2" class="form-label"><%= form.label :name, "氏名", class: "label" %></label>
          <input type="text_field" placeholder="山田 太郎" class="form-control" id="formGroupExampleInput2" placeholder=<%= form.text_field :name %>
 
-      <div class="column is-6">
+       <div class="column is-6">
          <label for="formGroupExampleInput2" class="form-label"><%= form.label :birthday, "生年月日", class: "label" %></label>
-         <input type="text_field" placeholder="2011年1月1日" class="form-control" id="formGroupExampleInput2" placeholder=<%= form.text_field :birthday %>
-
+         <div class="birthday_field">
+         <%= raw sprintf(
+                   form.date_select(
+                     :birthday,
+                     use_month_numbers: true,
+                     start_year: 1930,
+                     end_year: (Time.now.year - 5),
+                     default: Date.new(1989, 1, 1),
+                     date_separator: '%s'),
+                   '年 ', '月 ') + '日' %>
 
       <div class="column is-6">
          <label for="formGroupExampleInput2" class="form-label"><%= form.label :age, "年齢", class: "label" %></label>
-         <input type="text_field" placeholder="10歳" class="form-control" id="formGroupExampleInput2" placeholder=<%= form.text_field :age %>
+         <%= form.select(:age, options_for_select((16..90).to_a)) %>
 
       <div class="column is-6">
          <label for="formGroupExampleInput2" class="form-label"><%= form.label :family, "兄弟姉妹の校園名・学年・組/保護者・同居人の職業", class: "label" %></label>
