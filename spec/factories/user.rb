@@ -3,7 +3,6 @@ FactoryBot.define do
     id { 1 }
     email { "admin@admin.com" }
     password { '111111' }
-    password_confirmation { '111111' }
     admin { "true" }
   end
 
@@ -18,7 +17,6 @@ FactoryBot.define do
     id { 3 }
     email { "normal2@normal.com" }
     password { '111111' }
-    password_confirmation { '111111' }
     admin { "false" }
   end
 end
