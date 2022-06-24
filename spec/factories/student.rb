@@ -1,11 +1,16 @@
 FactoryBot.define do
-
-  factory :admin_user, class: User do
+  factory :student, class: Student do
     id { 1 }
-    name { "管理者" }
-    email { "admin@admin.com" }
-    password { '123456' }
-    password_confirmation { '123456' }
-    admin { "true" }
+    student_furigana { "やまだたろう" }
+    student_name { "山田太郎" }
+    sex { '男' }
+    birthday { '2011-11-23' }
+    telephone { "077-1234-5678" }
+    cellphone { "090-1234-5678" }
+    post_code { "600-0000" }
+    address { "京都府京都市中京区烏丸御池123" }
+    parents_furigana { "やまだきょうこ" }
+    parents_name { "山田京子" }
+    relationship { "母" }
   end
-end  
+end
