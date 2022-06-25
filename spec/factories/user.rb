@@ -11,7 +11,7 @@ FactoryBot.define do
     admin { "false" }
   end
 
-  factory :student, class: Student do
+  factory :student1, class: Student do
     student_furigana { "やまだたろう" }
     student_name { "山田太郎" }
     sex { '男' }
@@ -26,9 +26,33 @@ FactoryBot.define do
     user_id { User.find_by(email: 'normal1@normal.com').id}
   end
 
+  factory :student2, class: Student do
+    student_furigana { "" }
+    student_name { "" }
+    sex { '' }
+    birthday { '' }
+    telephone { "" }
+    cellphone { "" }
+    post_code { "" }
+    address { "" }
+    parents_furigana { "" }
+    parents_name { "" }
+    relationship { "" }
+    user_id { User.find_by(email: 'normal2@normal.com').id}
+  end
+
   factory :user2, class: User do
     email { "normal2@normal.com" }
     password { '111111' }
     admin { "false" }
+  end
+
+  factory :family_environment, class: FamilyEnvironment do
+    relationship { "母" }
+    name { '山田京子' }
+    birthday { '1980-11-23' }
+    age { '40' }
+    family { '会社員' }
+    student_id { Student.find_by(student_furigana: "やまだたろう").id }
   end
 end
