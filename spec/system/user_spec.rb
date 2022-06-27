@@ -29,6 +29,16 @@ RSpec.describe 'ユーザー登録・ログイン・ログアウト機能', type
     end
   end
 
+  context 'ログインに失敗した場合' do
+    it 'エラーメッセージが表示される' do
+      visit new_user_session_path
+      fill_in 'user_email', with: 'aa@admin.com'
+      fill_in 'user_password', with: '111111'
+      find('#session_new').click
+      expect(page).to have_content 'Eメールまたはパスワードが違います。'
+    end
+  end
+
   context '管理者としてログインした場合' do
     it '管理画面にアクセスできる' do
       visit new_user_session_path
