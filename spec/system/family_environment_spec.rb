@@ -5,7 +5,7 @@ RSpec.describe '家庭環境調査管理機能', type: :system do
     @user.skip_confirmation!
     @user.save!
     @student = FactoryBot.create(:student)
-    @family_environment = FactoryBot.create(:family_environment)
+    @family_environment = FactoryBot.create(:family_environment1)
   end
 
   context '新規登録をした場合' do
@@ -67,6 +67,20 @@ RSpec.describe '家庭環境調査管理機能', type: :system do
       fill_in 'formGroup1', with: '父'
       click_on '更新する'
       expect(page).to have_content '家庭環境調査を更新しました。'
+    end
+  end
+
+  context '一般ユーザーが他人の家庭環境調査一覧にアクセスした場合' do
+    let(:user2) { FactoryBot.create(:user2) }
+    let(:student2) { FactoryBot.create(:student2) }
+    let(:family_environment2) { FactoryBot.create(:family_environment2) }
+    it 'トップページに遷移する' do
+      visit new_user_session_path
+      fill_in 'user_email', with: 'normal1@normal.com'
+      fill_in 'user_password', with: '111111'
+      find('#session_new').click
+      visit edit_user_student_family_environment_path(@family_environment, student_id: @student, user_id: @user)
+      expect(page).to have_content 'top'
     end
   end
 end

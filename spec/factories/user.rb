@@ -47,13 +47,22 @@ FactoryBot.define do
     user_id { User.find_by(email: 'normal2@normal.com').id}
   end
 
-  factory :family_environment, class: FamilyEnvironment do
+  factory :family_environment1, class: FamilyEnvironment do
     relationship { "母" }
     name { '山田京子' }
     birthday { '1980-11-23' }
     age { '40' }
     family { '会社員' }
     student_id { Student.find_by(student_furigana: "やまだたろう").id }
+  end
+
+  factory :family_environment2, class: FamilyEnvironment do
+    relationship { "父" }
+    name { '佐藤正' }
+    birthday { '1980-11-23' }
+    age { '40' }
+    family { '自営業' }
+    student_id { Student.find_by(student_furigana: "さとうはなこ").id }
   end
 
   factory :emergency_contact, class: EmergencyContact do

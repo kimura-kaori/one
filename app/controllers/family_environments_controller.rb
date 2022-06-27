@@ -5,14 +5,14 @@ class FamilyEnvironmentsController < ApplicationController
     @user = User.find(params[:user_id])
     @student = Student.find(params[:student_id])
     @my_family_environments = @student.family_environments
-    redirect_to root_path unless @user == current_user || current_user.admin == true
+    redirect_to root_path unless @user == current_user
   end
 
   def show
     @user = User.find(params[:user_id])
     @student = Student.find(params[:student_id])
     @family_environment = FamilyEnvironment.find(params[:id])
-    redirect_to root_path unless @user == current_user || current_user.admin == true
+    redirect_to root_path unless @user == current_user
   end
 
   def new
@@ -36,7 +36,7 @@ class FamilyEnvironmentsController < ApplicationController
     @user = User.find(params[:user_id])
     @student = Student.find(params[:student_id])
     @family_environment = FamilyEnvironment.find(params[:id])
-    redirect_to root_path unless @user == current_user || current_user.admin == true
+    redirect_to root_path unless @user == current_user
   end
 
   def update

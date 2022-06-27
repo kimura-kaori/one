@@ -5,14 +5,14 @@ class EmergencyContactsController < ApplicationController
     @user = User.find(params[:user_id])
     @student = Student.find(params[:student_id])
     @my_emergency_contacts = @student.emergency_contacts
-    redirect_to root_path unless @user == current_user || current_user.admin == true
+    redirect_to root_path unless @user == current_user
   end
 
   def show
     @user = User.find(params[:user_id])
     @student = Student.find(params[:student_id])
     @emergency_contact = EmergencyContact.find(params[:id])
-    redirect_to root_path unless @user == current_user || current_user.admin == true
+    redirect_to root_path unless @user == current_user
   end
 
   def new
@@ -35,7 +35,7 @@ class EmergencyContactsController < ApplicationController
     @user = User.find(params[:user_id])
     @student = Student.find(params[:student_id])
     @emergency_contact = EmergencyContact.find(params[:id])
-    redirect_to root_path unless @user == current_user || current_user.admin == true
+    redirect_to root_path unless @user == current_user
   end
 
   def update
