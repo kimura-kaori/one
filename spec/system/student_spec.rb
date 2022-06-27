@@ -33,7 +33,7 @@ end
   end
 
   context '編集をした場合' do
-    it '更新後の生徒の詳細ページが表示される' do
+    it '更新した生徒の詳細ページが表示される' do
       visit new_user_session_path
       fill_in 'user_email', with: 'normal1@normal.com'
       fill_in 'user_password', with: '111111'
@@ -41,6 +41,32 @@ end
       visit edit_user_student_path(@user, @student)
       fill_in 'formGroup1', with: 'テスト'
       click_on '更新する'
+      expect(page).to have_content '基本情報'
+    end
+  end
+
+  context '一般ユーザーが他人の生徒ページにアクセスした場合' do
+    let(:user2) { FactoryBot.create(:user2) }
+    let(:student2) { FactoryBot.create(:student2) }
+    it 'トップページに遷移する' do
+      visit new_user_session_path
+      fill_in 'user_email', with: 'normal1@normal.com'
+      fill_in 'user_password', with: '111111'
+      find('#session_new').click
+      visit user_student_path(user2.id, student2.id)
+      expect(page).to have_content 'top'
+    end
+  end
+
+  context '管理者が生徒詳細ページにアクセスした場合' do
+    let(:user2) { FactoryBot.create(:user2) }
+    let(:student2) { FactoryBot.create(:student2) }
+    it '生徒詳細ページにアクセスできる' do
+      visit new_user_session_path
+      fill_in 'user_email', with: 'admin@admin.com'
+      fill_in 'user_password', with: '111111'
+      find('#session_new').click
+      visit user_student_path(user2.id, student2.id)
       expect(page).to have_content '基本情報'
     end
   end

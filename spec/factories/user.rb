@@ -11,6 +11,12 @@ FactoryBot.define do
     admin { "false" }
   end
 
+  factory :user2, class: User do
+    email { "normal2@normal.com" }
+    password { '111111' }
+    admin { "false" }
+  end
+
   factory :student, class: Student do
     student_furigana { "やまだたろう" }
     student_name { "山田太郎" }
@@ -24,6 +30,21 @@ FactoryBot.define do
     parents_name { "山田京子" }
     relationship { "母" }
     user_id { User.find_by(email: 'normal1@normal.com').id}
+  end
+
+  factory :student2, class: Student do
+    student_furigana { "さとうはなこ" }
+    student_name { "佐藤花子" }
+    sex { '女' }
+    birthday { '2011-11-23' }
+    telephone { "077-1234-5678" }
+    cellphone { "090-1234-5678" }
+    post_code { "600-0000" }
+    address { "京都府京都市中京区烏丸御池321" }
+    parents_furigana { "さとうこういち" }
+    parents_name { "佐藤浩一" }
+    relationship { "父" }
+    user_id { User.find_by(email: 'normal2@normal.com').id}
   end
 
   factory :family_environment, class: FamilyEnvironment do
