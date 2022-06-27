@@ -38,7 +38,7 @@ RSpec.describe 'ユーザー登録・ログイン・ログアウト機能', type
       expect(page).to have_content 'Eメールまたはパスワードが違います。'
     end
   end
-  
+
   context '管理者としてログインした場合' do
     it '管理画面にアクセスできる' do
       visit new_user_session_path

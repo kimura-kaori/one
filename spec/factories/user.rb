@@ -65,11 +65,19 @@ FactoryBot.define do
     student_id { Student.find_by(student_furigana: "さとうはなこ").id }
   end
 
-  factory :emergency_contact, class: EmergencyContact do
+  factory :emergency_contact1, class: EmergencyContact do
     name { '山田京子' }
     relationship { "母" }
     contact_address { 'DIC株式会社' }
     telephone { '090-0000-0000' }
     student_id { Student.find_by(student_furigana: "やまだたろう").id }
+  end
+
+  factory :emergency_contact2, class: EmergencyContact do
+    name { '佐藤正' }
+    relationship { "父" }
+    contact_address { '有限会社DIC' }
+    telephone { '090-0000-0000' }
+    student_id { Student.find_by(student_furigana: "さとうはなこ").id }
   end
 end

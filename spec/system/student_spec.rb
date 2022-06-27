@@ -45,7 +45,7 @@ end
     end
   end
 
-  context '一般ユーザーが他人の生徒ページにアクセスした場合' do
+  context '他人の生徒ページにアクセスした場合' do
     let(:user2) { FactoryBot.create(:user2) }
     let(:student2) { FactoryBot.create(:student2) }
     it 'トップページに遷移する' do
@@ -55,19 +55,6 @@ end
       find('#session_new').click
       visit user_student_path(user2.id, student2.id)
       expect(page).to have_content 'top'
-    end
-  end
-
-  context '管理者が生徒詳細ページにアクセスした場合' do
-    let(:user2) { FactoryBot.create(:user2) }
-    let(:student2) { FactoryBot.create(:student2) }
-    it '生徒詳細ページにアクセスできる' do
-      visit new_user_session_path
-      fill_in 'user_email', with: 'admin@admin.com'
-      fill_in 'user_password', with: '111111'
-      find('#session_new').click
-      visit user_student_path(user2.id, student2.id)
-      expect(page).to have_content '基本情報'
     end
   end
 end
