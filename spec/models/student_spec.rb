@@ -4,7 +4,7 @@ RSpec.describe Student, type: :model do
     @user = FactoryBot.create(:user1)
     @user.skip_confirmation!
     @user.save!
-    @student = FactoryBot.create(:student1)
+    @student = FactoryBot.create(:student)
   end
   describe '新規生徒登録' do
     context '全項目に入力した場合' do

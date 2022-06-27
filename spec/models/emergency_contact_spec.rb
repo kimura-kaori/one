@@ -4,8 +4,8 @@ RSpec.describe Student, type: :model do
     @user = FactoryBot.create(:user1)
     @user.skip_confirmation!
     @user.save!
-    @student = FactoryBot.create(:student1)
-    @emergency_contact = FactoryBot.create(:emergency_contact)
+    @student = FactoryBot.create(:student)
+    @emergency_contact = FactoryBot.create(:emergency_contact1)
   end
   describe '緊急連絡先登録' do
     context '全項目に入力した場合' do

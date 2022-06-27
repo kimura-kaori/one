@@ -4,8 +4,8 @@ RSpec.describe Student, type: :model do
     @user = FactoryBot.create(:user1)
     @user.skip_confirmation!
     @user.save!
-    @student = FactoryBot.create(:student1)
-    @family_environment = FactoryBot.create(:family_environment)
+    @student = FactoryBot.create(:student)
+    @family_environment = FactoryBot.create(:family_environment1)
   end
   describe '家庭環境調査登録' do
     context '全項目に入力した場合' do
