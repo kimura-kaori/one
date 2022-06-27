@@ -23,7 +23,7 @@ class FamilyEnvironmentsController < ApplicationController
     @student = Student.find(params[:student_id])
     @family_environment = @student.family_environments.build(family_environment_params)
     if @family_environment.save
-      redirect_to user_student_family_environment_path(@family_environment.id, student_id: @student.id, user_id: @user.id), notice: "Family environment was successfully created."
+      redirect_to user_student_family_environment_path(@family_environment.id, student_id: @student.id, user_id: @user.id), notice: "家庭環境調査を登録しました。"
     else
       render :new
     end
@@ -40,7 +40,7 @@ class FamilyEnvironmentsController < ApplicationController
     @family_environment = FamilyEnvironment.find(params[:id])
     @student = Student.find(params[:student_id])
       if @family_environment.update(family_environment_params)
-        redirect_to user_student_family_environment_path(@user, @student, @family_environment), notice: "Emergency contact was successfully updated."
+        redirect_to user_student_family_environment_path(@user, @student, @family_environment), notice: "家庭環境調査を更新しました。"
       else
         render :edit
       end
@@ -49,7 +49,7 @@ class FamilyEnvironmentsController < ApplicationController
   def destroy
     @family_environment = FamilyEnvironment.find(params[:id])
     @family_environment.destroy
-    redirect_to family_environments_url, notice: "Family environment was successfully destroyed."
+    redirect_to family_environments_url, notice: "家庭環境調査を削除しました。"
   end
 
   private

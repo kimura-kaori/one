@@ -27,7 +27,7 @@ class StudentsController < ApplicationController
     @student = current_user.students.build(student_params)
 
       if @student.save
-        redirect_to user_student_path(@student.id, user_id: @user.id), notice: "Student was successfully created."
+        redirect_to user_student_path(@student.id, user_id: @user.id), notice: "基本情報を登録しました。"
       else
         render :new
       end
@@ -37,7 +37,7 @@ class StudentsController < ApplicationController
     @user = User.find(params[:user_id])
     @student = Student.find(params[:id])
       if @student.update(student_params)
-        redirect_to user_student_path(@student, user_id: @user.id), notice: "Student was successfully updated."
+        redirect_to user_student_path(@student, user_id: @user.id), notice: "基本情報を更新しました。"
       else
         render :edit, status: :unprocessable_entity
       end
@@ -46,7 +46,7 @@ class StudentsController < ApplicationController
   def destroy
     @student = Student.find(params[:id])
     @student.destroy
-      redirect_to students_url, notice: "Student was successfully destroyed."
+      redirect_to students_url, notice: "基本情報を削除しました。"
   end
 
   def mypage

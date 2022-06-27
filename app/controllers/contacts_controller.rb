@@ -19,7 +19,7 @@ class ContactsController < ApplicationController
 
     respond_to do |format|
       if @contact.save
-        format.html { redirect_to user_contact_path(@contact, @user), notice: "Contact was successfully created." }
+        format.html { redirect_to user_contact_path(@contact, @user), notice: "ご連絡を受け付けました。" }
         format.json { render :show, status: :created, location: @contact }
       else
         format.html { render :new, status: :unprocessable_entity }

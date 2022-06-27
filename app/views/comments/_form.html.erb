@@ -1,7 +1,7 @@
 <%= form_with(model: [:contact, comment], url: user_contact_comments_path(comment, user_id: @user, contact_id: @contact)) do |form| %>
   <% if comment.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(comment.errors.count, "error") %> prohibited this comment from being saved:</h2>
+      <p class="error"><%= comment.errors.count %>件のエラーがあります。</p>
       <ul>
       <% comment.errors.full_messages.each do |message| %>
         <li><%= message %></li>

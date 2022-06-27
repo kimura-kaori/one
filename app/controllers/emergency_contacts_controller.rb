@@ -22,7 +22,7 @@ class EmergencyContactsController < ApplicationController
     @student = Student.find(params[:student_id])
     @emergency_contact = @student.emergency_contacts.build(emergency_contact_params)
       if @emergency_contact.save
-        redirect_to user_student_emergency_contact_path(@user, @student, @emergency_contact), notice: "Emergency contact was successfully created."
+        redirect_to user_student_emergency_contact_path(@user, @student, @emergency_contact), notice: "緊急連絡先を登録しました。"
       else
         render :new
       end
@@ -39,7 +39,7 @@ class EmergencyContactsController < ApplicationController
     @student = Student.find(params[:student_id])
     @emergency_contact = EmergencyContact.find(params[:id])
       if @emergency_contact.update(emergency_contact_params)
-        redirect_to user_student_emergency_contact_path(@user, @student, @emergency_contact), notice: "Emergency contact was successfully updated."
+        redirect_to user_student_emergency_contact_path(@user, @student, @emergency_contact), notice: "緊急連絡先情報を更新しました。"
       else
         render :edit
       end
@@ -48,7 +48,7 @@ class EmergencyContactsController < ApplicationController
   def destroy
     @emergency_contact = EmergencyContact.find(params[:id])
     @emergency_contact.destroy
-      redirect_to user_student_emergency_contact_path, notice: "Emergency contact was successfully destroyed."
+      redirect_to user_student_emergency_contact_path, notice: "緊急連絡先情報を削除しました。"
     end
 
   private
