@@ -25,6 +25,7 @@ group :development, :test do
   gem 'dotenv-rails'
   gem 'rspec-rails', '~> 3.8'
   gem 'factory_bot_rails'
+  gem 'pry-rails'
 end
 
 group :development do
@@ -38,7 +39,6 @@ group :test do
   gem 'capybara', '>= 2.15'
   gem 'webdrivers'
   gem 'database_rewinder'
-  gem 'pry-rails'
 end
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]

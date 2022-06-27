@@ -37,7 +37,7 @@ class StudentsController < ApplicationController
     @user = User.find(params[:user_id])
     @student = Student.find(params[:id])
       if @student.update(student_params)
-        redirect_to user_student_path(@student, user_id: @user.id), notice: "基本情報を更新しました。"
+        redirect_to user_student_path(@user, @student), notice: "基本情報を更新しました。"
       else
         render :edit, status: :unprocessable_entity
       end

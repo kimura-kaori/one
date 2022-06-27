@@ -11,8 +11,8 @@ end
     it '登録した家族の詳細ページが表示される' do
       visit new_user_student_family_environment_path(@student.id, user_id: @user.id)
       binding.pry
-      fill_in 'user_email', with: 'normal1@normal.com'
-      fill_in 'user_password', with: '111111'
+      fill_in 'user_email', with: '母'
+      fill_in 'user_password', with: '山田京子'
       find('#session_new').click
       visit new_user_student_path(user_id: @user.id)
       fill_in 'formGroup1', with: 'やまだたろう'

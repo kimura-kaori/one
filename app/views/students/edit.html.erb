@@ -1,6 +1,6 @@
 <h3>基本情報 編集</h3>
 
-<%= render 'form', student: @student %>
+<%= render 'form', student: @student, user: @user %>
 
 <%= link_to '詳細', user_student_path(@student, user_id: @user.id) ,class: "btn btn-outline-success"%> |
 <%= link_to 'マイページ', user_path(current_user) ,class: "btn btn-outline-success"%>

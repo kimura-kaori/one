@@ -28,7 +28,7 @@ end
       fill_in 'formGroup10', with: '山田京子'
       fill_in 'formGroup11', with: '母'
       click_on '登録する'
-      expect(page).to have_content '生徒基本情報'
+      expect(page).to have_content '基本情報'
     end
   end
 
@@ -38,9 +38,10 @@ end
       fill_in 'user_email', with: 'normal1@normal.com'
       fill_in 'user_password', with: '111111'
       find('#session_new').click
-      visit edit_user_student_path(@student, user_id: @user.id)
       # binding.pry
-      fill_in 'formGroup1', with: 'きむら'
+      visit edit_user_student_path(@user, @student)
+      # binding.pry
+      fill_in 'formGroup1', with: 'テスト'
         # binding.pry
       click_on '更新する'
       expect(page).to have_content '生徒基本情報'
