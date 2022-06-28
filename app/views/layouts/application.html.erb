@@ -27,6 +27,7 @@
       <div id="Navber ">
         <ul class="navbar-nav ">
           <% if user_signed_in? %>
+
             <li class="nav-item active">
               <%= link_to 'マイページ', user_path(current_user), class: 'nav-link' %>
             </li>
