@@ -2,23 +2,23 @@
 
 <div class="mb-3">
   <label for="formGroupExampleInput" class="form-label">続柄</label>
-  <input type="text" class="form-control" id="formGroupExampleInput" placeholder=<%=@family_environment.relationship %>>
+  <input type="text" class="form-control w20" id="formGroupExampleInput" placeholder=<%=@family_environment.relationship %>>
 </div>
 <div class="mb-3">
   <label for="formGroupExampleInput" class="form-label">氏名</label>
-  <input type="text" class="form-control" id="formGroupExampleInput" placeholder=<%=@family_environment.name %>>
+  <input type="text" class="form-control w20" id="formGroupExampleInput" placeholder=<%=@family_environment.name %>>
 </div>
 <div class="mb-3">
   <label for="formGroupExampleInput" class="form-label">生年月日</label>
-  <input type="text" class="form-control" id="formGroupExampleInput" placeholder=<%=@family_environment.birthday %>>
+  <input type="text" class="form-control w20" id="formGroupExampleInput" placeholder=<%=@family_environment.birthday %>>
 </div>
 <div class="mb-3">
   <label for="formGroupExampleInput" class="form-label">年齢</label>
-  <input type="text" class="form-control" id="formGroupExampleInput" placeholder=<%=@family_environment.age %>>
+  <input type="text" class="form-control w20" id="formGroupExampleInput" placeholder=<%=@family_environment.age %>>
 </div>
 <div class="mb-3">
   <label for="formGroupExampleInput" class="form-label">兄弟姉妹の校園名・学年・組/保護者・同居人の職業会社員</label>
-  <input type="text" class="form-control" id="formGroupExampleInput" placeholder=<%=@family_environment.family %>>
+  <input type="text" class="form-control w20" id="formGroupExampleInput" placeholder=<%=@family_environment.family %>>
 </div>
 
 <%= link_to '編集', edit_user_student_family_environment_path(@family_environment.id, student_id: @student.id, user_id: @user.id) ,class: "btn btn-outline-success" %> |

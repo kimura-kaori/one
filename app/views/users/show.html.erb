@@ -66,7 +66,7 @@
         <br>TEL：075-123-4567
         <br>E-mail： kyotohigashi-c@city.kyoto.jp</p>
         <% if @contact.present?%>
-          <p><strong>ご登録内容を変更後は、<strong><%=link_to '連絡欄', user_contact_path(@contact.id, user_id: @user.id) %></strong>よりご連絡ください。</strong></p>
+          <p>ご登録内容を変更後は、<strong><%=link_to '連絡欄', user_contact_path(@contact.id, user_id: @user.id) %></strong>よりご連絡ください。</p>
         <% end %>
       </div>
     </div>
