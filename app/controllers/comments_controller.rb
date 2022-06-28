@@ -6,7 +6,6 @@ class CommentsController < ApplicationController
     @comment = @contact.comments.build(comment_params)
     url = request.headers[:referer]
     respond_to do |format|
-      #コメントの相手にメールが飛ぶ条件分岐をしたい
       if current_user.try(:admin?)
         @comment.save
         format.js { render :index }
@@ -16,7 +15,7 @@ class CommentsController < ApplicationController
         format.js { render :index }
         ReportMailer.notice_comment(current_user, url).deliver #投稿者が学校なら保護者へ
       else
-        format.html { redirect_to user_contact_path(@contact), notice: '投稿できませんでした...' }
+        format.js { render :error }
       end
     end
   end

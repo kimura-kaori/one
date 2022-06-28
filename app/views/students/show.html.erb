@@ -2,50 +2,50 @@
 
 <div class=container>
 <div class="mb-3">
-  <label for="formGroupExampleInput" class="form-label">生徒名（ふりがな）</label>
+  <label for="formGroupExampleInput" class="form-label">student_furigana</label>
   <input type="text" class="form-control w20" id="formGroupExampleInput" placeholder=<%= @student.student_furigana %>>
 </div>
 <div class="mb-3">
-  <label for="formGroupExampleInput2" class="form-label">生徒名（漢字）</label>
+  <label for="formGroupExampleInput2" class="form-label">student_name</label>
   <input type="text" class="form-control w20" id="formGroupExampleInput2" placeholder=<%= @student.student_name %>>
 </div>
 <div class="mb-3">
-  <label for="formGroupExampleInput2" class="form-label">性別</label>
+  <label for="formGroupExampleInput2" class="form-label">sex</label>
   <input type="text" class="form-control w20" id="formGroupExampleInput2" placeholder=<%= @student.sex %>>
 </div>
 <div class="mb-3">
-  <label for="formGroupExampleInput2" class="form-label">生年月日</label>
+  <label for="formGroupExampleInput2" class="form-label">birthday</label>
   <input type="text" class="form-control w20" id="formGroupExampleInput2" placeholder=<%= @student.birthday %>>
 </div>
 <div class="mb-3">
-  <label for="formGroupExampleInput2" class="form-label">（自宅）電話番号</label>
+  <label for="formGroupExampleInput2" class="form-label">telephone</label>
   <input type="text" class="form-control w20" id="formGroupExampleInput2" placeholder=<%= @student.telephone %>>
 </div>
 <div class="mb-3">
-  <label for="formGroupExampleInput2" class="form-label">（携帯）電話番号</label>
+  <label for="formGroupExampleInput2" class="form-label">cellphone</label>
   <input type="text" class="form-control w20" id="formGroupExampleInput2" placeholder=<%= @student.cellphone %>>
 </div>
 <div class="mb-3">
-  <label for="formGroupExampleInput2" class="form-label">郵便番号</label>
+  <label for="formGroupExampleInput2" class="form-label">post_code</label>
   <input type="text" class="form-control w20" id="formGroupExampleInput2" placeholder=<%= @student.post_code %>>
 </div>
 <div class="mb-3">
-  <label for="formGroupExampleInput2" class="form-label">住所</label>
+  <label for="formGroupExampleInput2" class="form-label">address</label>
   <input type="text" class="form-control w40" id="formGroupExampleInput2" placeholder=<%= @student.address %>>
 </div>
 <div class="mb-3">
-  <label for="formGroupExampleInput2" class="form-label">保護者名（ふりがな）</label>
+  <label for="formGroupExampleInput2" class="form-label">parents_furigana</label>
   <input type="text" class="form-control w20" id="formGroupExampleInput2" placeholder=<%= @student.parents_furigana %>>
 </div>
 <div class="mb-3">
-  <label for="formGroupExampleInput2" class="form-label">保護者名（漢字）</label>
+  <label for="formGroupExampleInput2" class="form-label">parents_name</label>
   <input type="text" class="form-control w20" id="formGroupExampleInput2" placeholder=<%= @student.parents_name %>>
 </div>
 <div class="mb-3">
-  <label for="formGroupExampleInput2" class="form-label">続柄</label>
+  <label for="formGroupExampleInput2" class="form-label">relationship</label>
   <input type="text" class="form-control w20" id="formGroupExampleInput2" placeholder=<%= @student.relationship %>>
 
 </div>
-<%= link_to '編集', edit_user_student_path(@student, user_id: @user.id)  ,class: "btn btn-outline-success", id:"edit" %>
+<%= link_to 'edit', edit_user_student_path(@student, user_id: @user.id)  ,class: "btn btn-outline-success", id:"edit" %>
 <%= link_to 'マイページ', user_path(current_user)  ,class: "btn btn-outline-success"%>
 </div>

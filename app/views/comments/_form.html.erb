@@ -1,18 +1,19 @@
-<%= form_with(model: [:contact, comment], url: user_contact_comments_path(comment, user_id: @user, contact_id: @contact)) do |form| %>
-  <% if comment.errors.any? %>
+<%= form_with(model: [:contact, @comment], url: user_contact_comments_path(comment, user_id: @user, contact_id: @contact)) do |form| %>
+  <% if @comment.errors.any? %>
     <div id="error_explanation">
-      <p class="error"><%= comment.errors.count %>件のエラーがあります。</p>
+      <p><%= pluralize(@comment.errors.count, "エラー") %></p>
       <ul>
-      <% comment.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
+        <% @comment.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
       </ul>
     </div>
   <% end %>
-
+  <div id="comments-error">
+    <%= render 'layouts/error_messages', model: form.object %>
+  </div>
   <div class="form-floating">
-
-    <textarea class="form-control" <%= form.text_area :content %></textarea>
+    <textarea class="form-control w40" <%= form.text_area :content %></textarea>
   </div>
 
   <div class="actions">

@@ -3,15 +3,15 @@
   <table class="table">
     <thead>
         <tr>
-          <th>生徒名</th>
+          <th>student_name</th>
         </tr>
       </thead>
       <tbody>
       <% @students.each do |student| %>
         <tr>
           <td><%= student.student_name %></td>
-          <td><%= link_to '詳細', student %></td>
-          <td><%= link_to '編集', edit_student_path(student) %></td>
+          <td><%= link_to 'show', student %></td>
+          <td><%= link_to 'edit', edit_student_path(student) %></td>
         </tr>
       <% end %>
   </tbody>
