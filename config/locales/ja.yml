@@ -1,6 +1,9 @@
 ---
 ja:
   activerecord:
+    student:
+      student_furigana: 生徒名（ふりがな）
+      student_name: 生徒名（漢字）
     errors:
       messages:
         record_invalid: 'バリデーションに失敗しました: %{errors}'
@@ -205,42 +208,3 @@ ja:
       long: "%Y/%m/%d %H:%M"
       short: "%m/%d %H:%M"
     pm: 午後
-ja:
-  activerecord:
-    models:
-      student: 生徒基本情報
-      user: ユーザー
-      family_environment: 家庭環境調査
-      emergency_contact: 緊急連絡先
-    attributes:
-      student:
-        student_furigana: 生徒名（ふりがな）
-        student_name: 生徒名（漢字）
-        sex: 性別
-        birthday: 生年月日
-        telephone: （自宅）電話番号
-        cellphone: （携帯）電話番号
-        post_code:  郵便番号
-        address: 現住所
-        parents_furigana: 保護者名（ふりがな）
-        parents_name: 保護者名（漢字）
-        relationship: 続柄
-        name: 氏名
-        age: 年齢
-        created_at: 作成日時
-        family: 兄弟姉妹の校園名・学年・組/保護者・同居人の職業
-        updated_at: 更新日時
-        students: 生徒情報
-      family_environment:
-        relationship: 続柄
-        name: 氏名
-        age: 年齢
-        birthday: 生年月日
-        family: 兄弟姉妹の校園名・学年・組/保護者・同居人の職業
-      emergency_contact:
-        relationship: 続柄
-        name: 氏名
-        age: 年齢
-        contact_address: 連絡先
-        students: 生徒情報
-        telephone: 電話番号

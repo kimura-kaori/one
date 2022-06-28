@@ -37,3 +37,5 @@ ja:
         contact_address: 連絡先
         students: 生徒情報
         telephone: 電話番号
+      comment:
+        content: 本文  

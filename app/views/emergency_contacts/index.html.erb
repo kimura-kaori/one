@@ -3,10 +3,10 @@
 <table class="table table-hover">
   <thead>
     <tr>
-      <th>name</th>
-      <th>relationship</th>
-      <th>contact_address</th>
-      <th>telephone</th>
+      <th>氏名</th>
+      <th>続柄</th>
+      <th>連絡先</th>
+      <th>電話番号</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -19,8 +19,8 @@
         <td><%= emergency_contact.contact_address %></td>
         <td><%= emergency_contact.telephone %></td>
 
-        <td><%= link_to 'show', user_student_emergency_contact_path(emergency_contact.id, student_id: @student.id, user_id: @user.id), class: "btn btn-outline-success"%></td>
-        <td><%= link_to 'edit', edit_user_student_emergency_contact_path(emergency_contact.id, student_id: @student.id, user_id: @user.id), class: "btn btn-outline-success" %></td>
+        <td><%= link_to '詳細', user_student_emergency_contact_path(emergency_contact.id, student_id: @student.id, user_id: @user.id), class: "btn btn-outline-success"%></td>
+        <td><%= link_to '編集', edit_user_student_emergency_contact_path(emergency_contact.id, student_id: @student.id, user_id: @user.id), class: "btn btn-outline-success" %></td>
       </tr>
     <% end %>
   </tbody>

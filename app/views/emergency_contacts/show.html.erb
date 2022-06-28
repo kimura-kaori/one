@@ -1,20 +1,20 @@
 <h3>緊急連絡先</h3>
 <div class="mb-3">
-  <label for="formGroupExampleInput2" class="form-label">name</label>
+  <label for="formGroupExampleInput2" class="form-label">氏名</label>
   <input type="text" class="form-control w20" id="formGroupExampleInput2" placeholder=<%= @emergency_contact.name %>>
 </div>
 <div class="mb-3">
-  <label for="formGroupExampleInput2" class="form-label">relationship</label>
+  <label for="formGroupExampleInput2" class="form-label">続柄</label>
   <input type="text" class="form-control w20" id="formGroupExampleInput2" placeholder=<%= @emergency_contact.relationship %>>
 </div>
 <div class="mb-3">
-  <label for="formGroupExampleInput2" class="form-label">contact_address</label>
+  <label for="formGroupExampleInput2" class="form-label">連絡先</label>
   <input type="text" class="form-control w20" id="formGroupExampleInput2" placeholder=<%= @emergency_contact.contact_address %>>
 </div>
 <div class="mb-3">
-  <label for="formGroupExampleInput2" class="form-label">telephone</label>
+  <label for="formGroupExampleInput2" class="form-label">電話番号</label>
   <input type="text" class="form-control w20" id="formGroupExampleInput2" placeholder=<%= @emergency_contact.telephone %>>
 </div>
 
-<%= link_to 'edit', edit_user_student_emergency_contact_path(@emergency_contact.id, student_id:@student.id, user_id: @user.id) ,class: "btn btn-outline-success"%> |
+<%= link_to '編集', edit_user_student_emergency_contact_path(@emergency_contact.id, student_id:@student.id, user_id: @user.id) ,class: "btn btn-outline-success"%> |
 <%= link_to 'マイページ', user_path(current_user) ,class: "btn btn-outline-success"%>

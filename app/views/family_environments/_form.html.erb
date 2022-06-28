@@ -14,14 +14,14 @@
   <section class="section">
     <div class="container">
       <div class="columns is-centered">
-         <label for="formGroup1" class="form-label"><%= form.label :student_furigana, "relationship", class: "label" %></label>
+         <label for="formGroup1" class="form-label"><%= form.label :relationship, t("activerecord.attributes.student.relationship"), class: "label" %></label>
          <input type="text_field" placeholder="例 弟" class="form-control w20" id="formGroup1" placeholder=<%= form.text_field :relationship %>
       <div class="column is-6">
-         <label for="formGroupExampleInput2" class="form-label"><%= form.label :name, "name", class: "label" %></label>
+         <label for="formGroupExampleInput2" class="form-label"><%= form.label :name, t("activerecord.attributes.family_environment.name"), class: "label" %></label>
          <input type="text_field" placeholder="例 山田 太郎" class="form-control w20" id="formGroup2" placeholder=<%= form.text_field :name %>
 
        <div class="column is-6">
-         <label for="formGroupExampleInput2" class="form-label"><%= form.label :birthday, "birthday", class: "label" %></label>
+         <label for="formGroupExampleInput2" class="form-label"><%= form.label :birthday, t("activerecord.attributes.family_environment.birthday"), class: "label" %></label>
          <div class="birthday_field">
          <%= raw sprintf(
                    form.date_select(
@@ -34,11 +34,11 @@
                    '年 ', '月 ') + '日' %>
 
       <div class="column is-6">
-         <label for="formGroupExampleInput2" class="form-label"><%= form.label :age, "age", class: "label" %></label>
+         <label for="formGroupExampleInput2" class="form-label"><%= form.label :age,  t("activerecord.attributes.family_environment.age"), class: "label" %></label>
          <%= form.select(:age, options_for_select((16..90).to_a)) %>
 
       <div class="column is-6">
-         <label for="formGroupExampleInput2" class="form-label"><%= form.label :family, "family", class: "label" %></label>
+         <label for="formGroupExampleInput2" class="form-label"><%= form.label :family,  t("activerecord.attributes.family_environment.family"), class: "label" %></label>
          <input type="text_field" placeholder="例 京都東小学校5年3組" class="form-control w20" id="formGroup3" placeholder=<%= form.text_field :family %>
 
   <div class="actions">
