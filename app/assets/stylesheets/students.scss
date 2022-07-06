@@ -37,3 +37,45 @@ footer{
 .w40{
   width:40%;
 }
+
+// .form-control::placeholder{
+//   color: #cccccc;
+// }
+// .custom-field {
+//   position: relative;
+//  font-size: 14px;
+//   padding-top: 20px;
+// }
+//
+// .custom-field input {
+//   border: none;
+//   -webkit-appearance: none;
+//   -ms-appearance: none;
+//   -moz-appearance: none ;
+//   appearance: none;
+//   outline: none;
+//   background-color: #f2f2f2;
+//   padding: 12px;
+//   border-radius: 3px;
+//   width: 250px;
+//   font-size: 14px;
+// }
+//
+// .custom-field .placeholder {
+//   position: absolute;
+//   left: 12px;
+//   top: calc(50% + 10px);
+//   transform: translateY(-50%);
+//   color: #aaa ;
+//   transition:
+//       top 0.3s ease-in-out,
+//       font-size 0.3s ease-in-out,
+//       color 0.3s ease-in-out;
+// }
+//
+// .custom-field input:valid + .placeholder,
+// .custom-field input:focus + .placeholder {
+//   top: 10px;
+//   font-size: 12px;
+//   color: #cc0000;
+// }

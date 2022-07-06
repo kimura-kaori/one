@@ -1,19 +1,19 @@
 <h3>緊急連絡先</h3>
 <div class="mb-3">
   <label for="formGroupExampleInput2" class="form-label"><%=t("activerecord.attributes.emergency_contact.name")%></label>
-  <input type="text" class="form-control w20" id="formGroupExampleInput2" placeholder=<%= @emergency_contact.name %>>
+  <input type="text"readonly class="form-control w20" id="formGroupExampleInput2" placeholder=<%= @emergency_contact.name %>>
 </div>
 <div class="mb-3">
   <label for="formGroupExampleInput2" class="form-label"><%=t("activerecord.attributes.emergency_contact.relationship")%></label>
-  <input type="text" class="form-control w20" id="formGroupExampleInput2" placeholder=<%= @emergency_contact.relationship %>>
+  <input type="text"readonly class="form-control w20" id="formGroupExampleInput2" placeholder=<%= @emergency_contact.relationship %>>
 </div>
 <div class="mb-3">
   <label for="formGroupExampleInput2" class="form-label"><%=t("activerecord.attributes.emergency_contact.contact_address")%></label>
-  <input type="text" class="form-control w20" id="formGroupExampleInput2" placeholder=<%= @emergency_contact.contact_address %>>
+  <input type="text"readonly class="form-control w20" id="formGroupExampleInput2" placeholder=<%= @emergency_contact.contact_address %>>
 </div>
 <div class="mb-3">
   <label for="formGroupExampleInput2" class="form-label"><%=t("activerecord.attributes.emergency_contact.telephone")%></label>
-  <input type="text" class="form-control w20" id="formGroupExampleInput2" placeholder=<%= @emergency_contact.telephone %>>
+  <input type="text"readonly class="form-control w20" id="formGroupExampleInput2" placeholder=<%= @emergency_contact.telephone %>>
 </div>
 
 <%= link_to '編集', edit_user_student_emergency_contact_path(@emergency_contact.id, student_id:@student.id, user_id: @user.id) ,class: "btn btn-outline-success"%> |

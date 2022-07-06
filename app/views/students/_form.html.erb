@@ -14,22 +14,23 @@
     <div class="container">
       <div class="columns is-centered">
         <label for="formGroup1" class="form-label"><%= form.label :student_furigana, t("activerecord.attributes.student.student_furigana"), class: "label" %></label>
-        <input type="text_field" placeholder="やまだ はなこ" class="form-control w20" id="formGroup1" placeholder=<%= form.text_field :student_furigana %>
+        <input type="text_field" placeholder="やまだ はなこ" class="form-control w20" id="formGroup1" <%= form.text_field :student_furigana %>
       <div class="column is-6">
         <label for="formGroup2" class="form-label"><%= form.label :student_name, t("activerecord.attributes.student.student_name"), class: "label" %></label>
-        <input type="text_field" placeholder="山田 花子" class="form-control w20" id="formGroup2" placeholder=<%= form.text_field :student_name %>
+        <input type="text_field" placeholder="山田 花子" class="form-control w20" id="formGroup2" <%= form.text_field :student_name %>
 
-      <!-- <div class="form-check form-check-inline">
-        <label for="formGroupExampleInput2" class="form-label"> form.label :sex, "sex", class: "label" %></label>
-        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
-        <label class="form-check-label" for="inlineRadio1">男</label>
-        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
-        <label class="form-check-label" for="inlineRadio2">女</label>
-      </div> -->
+        <!-- <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="radio2" id="radio2a" <%= form.text_field :sex %>>
+          <label class="form-check-label" for="radio2a">男</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="radio2" id="radio2b" <%= form.text_field :sex %>>
+          <label class="form-check-label" for="radio2b">女</label>
+        </div> -->
 
       <div class="column is-6">
         <label for="formGroup3" class="form-label"><%= form.label :sex, t("activerecord.attributes.student.sex"), class: "label" %></label>
-        <input type="text_field" placeholder="女"  class="form-control w20" id="formGroup3" placeholder=<%= form.text_field :sex %>
+        <input type="text_field" placeholder="女"  class="form-control w20" id="formGroup3" <%= form.text_field :sex %>
 
       <div class="column is-6">
         <label for="formGroup4" class="form-label"><%= form.label :birthday, t("activerecord.attributes.student.birthday"), class: "label" %></label>
@@ -46,31 +47,31 @@
 
       <div class="column is-6">
         <label for="formGroup5" class="form-label"><%= form.label :telephone, t("activerecord.attributes.student.telephone"), class: "label" %></label>
-        <input type="text_field" placeholder="075-000-0000" class="form-control w20" id="formGroup5" placeholder=<%= form.text_field :telephone %>
+        <input type="text_field" placeholder="075-000-0000" class="form-control w20" id="formGroup5" <%= form.text_field :telephone %>
 
       <div class="column is-6">
         <label for="formGroup6" class="form-label"><%= form.label :cellphone, t("activerecord.attributes.student.cellphone"), class: "label" %></label>
-        <input type="text_field" placeholder="090-000-0000" class="form-control w20" id="formGroup6" placeholder=<%= form.text_field :cellphone %>
+        <input type="text_field" placeholder="090-000-0000" class="form-control w20" id="formGroup6" <%= form.text_field :cellphone %>
 
       <div class="column is-6">
         <label for="formGroup7" class="form-label"><%= form.label :post_code, t("activerecord.attributes.student.post_code"), class: "label" %></label>
-        <input type="text_field" placeholder="000-0000" class="form-control w20" id="formGroup7" placeholder=<%= form.text_field :post_code %>
+        <input type="text_field" placeholder="000-0000" class="form-control w20" id="formGroup7" <%= form.text_field :post_code %>
 
       <div class="column is-6">
         <label for="formGroup8" class="form-label"><%= form.label :address, t("activerecord.attributes.student.address"), class: "label" %></label>
-        <input type="text_field" placeholder="京都府京都市中京区御所南1234" class="form-control w40" id="formGroup8" placeholder=<%= form.text_field :address %>
+        <input type="text_field" placeholder="京都府京都市中京区御所南1234" class="form-control w40" id="formGroup8" <%= form.text_field :address %>
 
       <div class="column is-6">
         <label for="formGroup9" class="form-label"><%= form.label :parents_furigana, t("activerecord.attributes.student.parents_furigana"), class: "label" %></label>
-        <input type="text_field" placeholder="やまだ たかし" class="form-control w20" id="formGroup9" placeholder=<%= form.text_field :parents_furigana %>
+        <input type="text_field" placeholder="やまだ たかし" class="form-control w20" id="formGroup9" <%= form.text_field :parents_furigana %>
 
       <div class="column is-6">
         <label for="formGroup10" class="form-label"><%= form.label :parents_name, t("activerecord.attributes.student.parents_name"), class: "label" %></label>
-        <input type="text_field" placeholder="山田 隆" class="form-control w20" id="formGroup10" placeholder=<%= form.text_field :parents_name %>
+        <input type="text_field" placeholder="山田 隆" class="form-control w20" id="formGroup10" <%= form.text_field :parents_name %>
 
       <div class="column is-6">
         <label for="formGroup11" class="form-label"><%= form.label :relationship, t("activerecord.attributes.student.relationship"), class: "label" %></label>
-        <input type="text_field" placeholder="父" class="form-control w20" id="formGroup11" placeholder=<%= form.text_field :relationship %>
+        <input type="text_field" placeholder="父" class="form-control w20" id="formGroup11" <%= form.text_field :relationship %>
 
       <div class="actions">
         <%= form.submit class: "button" ,class: "btn btn-outline-success" %>

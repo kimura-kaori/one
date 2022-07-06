@@ -2,23 +2,23 @@
 
 <div class="mb-3">
   <label for="formGroupExampleInput" class="form-label"><%=t("activerecord.attributes.family_environment.relationship")%></label>
-  <input type="text" class="form-control w20" id="formGroupExampleInput" placeholder=<%=@family_environment.relationship %>>
+  <input type="text"readonly class="form-control w20" id="formGroupExampleInput" placeholder=<%=@family_environment.relationship %>>
 </div>
 <div class="mb-3">
   <label for="formGroupExampleInput" class="form-label"><%=t("activerecord.attributes.family_environment.name")%></label>
-  <input type="text" class="form-control w20" id="formGroupExampleInput" placeholder=<%=@family_environment.name %>>
+  <input type="text"readonly class="form-control w20" id="formGroupExampleInput" placeholder=<%=@family_environment.name %>>
 </div>
 <div class="mb-3">
   <label for="formGroupExampleInput" class="form-label"><%=t("activerecord.attributes.family_environment.birthday")%></label>
-  <input type="text" class="form-control w20" id="formGroupExampleInput" placeholder=<%=@family_environment.birthday %>>
+  <input type="text"readonly class="form-control w20" id="formGroupExampleInput" placeholder=<%=@family_environment.birthday %>>
 </div>
 <div class="mb-3">
   <label for="formGroupExampleInput" class="form-label"><%=t("activerecord.attributes.family_environment.age")%></label>
-  <input type="text" class="form-control w20" id="formGroupExampleInput" placeholder=<%=@family_environment.age %>>
+  <input type="text"readonly class="form-control w20" id="formGroupExampleInput" placeholder=<%=@family_environment.age %>>
 </div>
 <div class="mb-3">
   <label for="formGroupExampleInput" class="form-label"><%=t("activerecord.attributes.family_environment.family")%></label>
-  <input type="text" class="form-control w20" id="formGroupExampleInput" placeholder=<%=@family_environment.family %>>
+  <input type="text"readonly class="form-control w20" id="formGroupExampleInput" placeholder=<%=@family_environment.family %>>
 </div>
 
 <%= link_to '編集', edit_user_student_family_environment_path(@family_environment.id, student_id: @student.id, user_id: @user.id) ,class: "btn btn-outline-success" %> |
